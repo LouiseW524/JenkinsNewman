@@ -65,7 +65,7 @@
         }
       ],
       "request": {
-        "url": "{{URL}}/BuildMilestoneHistory?BuildRecordId=1",
+        "url": "{{URL}}/BuildMilestoneHistory?BuildRecordId=2",
         "method": "GET",
         "header": [
           {
