@@ -70,7 +70,7 @@
 			"collectionId": "7d5641bf-fdc7-889c-cea2-f8792d5b9514",
 			"responses": [],
 
-			"rawModeData": "{ \r\n  \"Name\": \"Jimmy413\",\r\n  \"Description\": \"# of defects found\",\r\n  \"Type\": \"count\",\r\n  \"Pass\": \"0\",\r\n  \"Fail\": \"15\",\r\n  \"Min\": \"0\",\r\n  \"Max\": \"100\",\r\n  \"Active\": \"1\"\r\n}"
+			"rawModeData": "{ \r\n  \"Name\": \"Jimmy1\",\r\n  \"Description\": \"# of defects found\",\r\n  \"Type\": \"count\",\r\n  \"Pass\": \"0\",\r\n  \"Fail\": \"15\",\r\n  \"Min\": \"0\",\r\n  \"Max\": \"100\",\r\n  \"Active\": \"1\"\r\n}"
 		}
 	]
 }
