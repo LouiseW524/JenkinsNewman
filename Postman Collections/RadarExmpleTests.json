@@ -18,8 +18,8 @@
             "exec": [
               "const jsonData = JSON.parse(responseBody);",
               "",
-              "const {buildURL} = \"{{build}}/100\";",
-              "const {artifactoryURL} = \"{{artifactory}}/build1\";",
+              "const {buildURL} = \"http://build.orbit.intel.com/job/ESP/job/ESP_CHAIN/job/ESP_UX/100\";",
+              "const {artifactoryURL} = \"http://artifactoryurl/build1\";",
               "",
               "",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
