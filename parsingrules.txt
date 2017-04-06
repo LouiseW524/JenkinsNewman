@@ -1,4 +1,4 @@
-ERROR=[ERROR],#error
+ERROR=#failure,#error
 WARNING=[WARNING],[WARN]
 INFO=[INFO]
 HEADER=[INFO] Building
