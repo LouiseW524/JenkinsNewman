@@ -1,0 +1,5 @@
+ERROR=[ERROR],#error
+WARNING=[WARNING],[WARN]
+INFO=[INFO]
+HEADER=[INFO] Building
+ignore=INFO,ERR
