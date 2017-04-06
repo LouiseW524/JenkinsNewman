@@ -72,7 +72,7 @@
 <<<<<<< HEAD:collection2.json
 			"rawModeData": "{ \r\n  \"Name\": \"Jimmy43\",\r\n  \"Description\": \"# of defects found\",\r\n  \"Type\": \"count\",\r\n  \"Pass\": \"0\",\r\n  \"Fail\": \"15\",\r\n  \"Min\": \"0\",\r\n  \"Max\": \"100\",\r\n  \"Active\": \"1\"\r\n}"
 =======
-			"rawModeData": "{ \r\n  \"Name\": \"Jimmy43\",\r\n  \"Description\": \"# of defects found\",\r\n  \"Type\": \"count\",\r\n  \"Pass\": \"0\",\r\n  \"Fail\": \"15\",\r\n  \"Min\": \"0\",\r\n  \"Max\": \"100\",\r\n  \"Active\": \"1\"\r\n}"
+			"rawModeData": "{ \r\n  \"Name\": \"Jimmy432\",\r\n  \"Description\": \"# of defects found\",\r\n  \"Type\": \"count\",\r\n  \"Pass\": \"0\",\r\n  \"Fail\": \"15\",\r\n  \"Min\": \"0\",\r\n  \"Max\": \"100\",\r\n  \"Active\": \"1\"\r\n}"
 >>>>>>> 67c289cf599fb03955b93fc5acfaf3a2cee5649c:collection.json
 		}
 	]
