@@ -1,5 +1,3 @@
-
-
 error /(?i)^error/
 error /[Ff]ailure/
 warning /[Ww]arning/
