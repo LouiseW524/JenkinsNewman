@@ -63,7 +63,7 @@
               "test_schema = {",
               "    \"type\": \"object\",",
               "    \"properties\": {",
-              "        \"tags\":{",
+              "        \"items\":{",
               "                \"type\": \"object\",",
               "                \"properties\": {               ",
               "                    \"BuildMilestonesRecordId\": { \"type\": \"integer\"},",
