@@ -63,7 +63,7 @@
               "test_schema = {",
               "  ",
               "        \"items\":{       ",
-              "                    \"BuildMilestonesRecordId\": { \"type\": \"ineger\"},",
+              "                    \"BuildMilestonesRecordId\": { \"type\": \"integer\"},",
               "                    \"BuildRecordId\": { \"type\": \"integer\"},",
               "    \t\t        \"PreviousBuildMilestone\": { \"type\": \"string\" },",
               "    \t\t        \"NewBuildMilestone\": { \"type\": \"string\" },",
