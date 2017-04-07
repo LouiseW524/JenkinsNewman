@@ -60,7 +60,9 @@
               "tests[\"Body matches string\"] = responseBody.has(\"BuildMilestonesRecordId\");",
               "tests['The Content-Type is JSON'] =postman.getResponseHeader('Content-Type')==='application/json; charset=utf-8';",
               "",
-              ""
+              "",
+              "",
+              "tests[\"Response time is less than 200ms\"] = responseTime < 200;"
             ]
           }
         }
