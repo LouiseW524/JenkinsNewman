@@ -65,7 +65,7 @@
         }
       ],
       "request": {
-        "url": "http://localhost:2345/api/build/BuildMilestoneHistory?BuildRecordId=2",
+        "url": "http://localhost:2345/api/build/BuildMilestoneHistory?BuildRecordId=1",
         "method": "GET",
         "header": [
           {
