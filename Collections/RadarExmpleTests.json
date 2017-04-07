@@ -72,10 +72,10 @@
               "                    \"Username\": { \"type\": \"string\" },",
               "    \t\t        \"Comment\": { \"type\": \"string\" },",
               "    \t\t        \"Timestamp\": { \"type\": \"string\" }",
+              "                 }",
               "            }",
-              "        }",
-              "    }",
-              "};",
+              "        }   ",
+              "    };",
               "tests[\"Testing schema\"] = tv4.validate(jsonData, test_schema);",
               "console.log(\"Validation errors: \", tv4.error);"
             ]
