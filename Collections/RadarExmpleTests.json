@@ -59,7 +59,26 @@
               "tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
               "tests[\"Body matches string\"] = responseBody.has(\"BuildMilestonesRecordId\");",
               "tests['The Content-Type is JSON'] =postman.getResponseHeader('Content-Type')==='application/json; charset=utf-8';",
-              ""
+              "",
+              "test_schema = {",
+              "    \"type\": \"object\",",
+              "    \"properties\": {",
+              "            \"items\": {",
+              "                \"type\": \"object\",",
+              "                \"properties\": {               ",
+              "                    \"BuildMilestonesRecordId\": { \"type\": \"integer\"},",
+              "                    \"BuildRecordId\": { \"type\": \"integer\"},",
+              "\t\t    \"PreviousBuildMilestone\": { \"type\": \"string\" },",
+              "\t\t    \"NewBuildMilestone\": { \"type\": \"string\" },",
+              "                    \"Username\": { \"type\": \"string\" },",
+              "\t\t    \"Comment\": { \"type\": \"string\" },",
+              "\t\t    \"Timestamp\": { \"type\": \"string\" },\t",
+              "            }",
+              "        }",
+              "    }",
+              "};",
+              "tests[\"Testing schema\"] = tv4.validate(jsonData, test_schema);",
+              "console.log(\"Validation errors: \", tv4.error);"
             ]
           }
         }
