@@ -105,7 +105,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{ \r\n  \"Name\": \"Jimmy12\",\r\n  \"Description\": \"# of defects found\",\r\n  \"Type\": \"count\",\r\n  \"Pass\": \"0\",\r\n  \"Fail\": \"15\",\r\n  \"Min\": \"0\",\r\n  \"Max\": \"100\",\r\n  \"Active\": \"1\"\r\n}"
+          "raw": "{ \r\n  \"Name\": \"Jimmy125\",\r\n  \"Description\": \"# of defects found\",\r\n  \"Type\": \"count\",\r\n  \"Pass\": \"0\",\r\n  \"Fail\": \"15\",\r\n  \"Min\": \"0\",\r\n  \"Max\": \"100\",\r\n  \"Active\": \"1\"\r\n}"
         },
         "description": ""
       },
