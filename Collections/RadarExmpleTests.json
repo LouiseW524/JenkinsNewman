@@ -61,7 +61,6 @@
               "tests['The Content-Type is JSON'] =postman.getResponseHeader('Content-Type')==='application/json; charset=utf-8';",
               "",
               "test_schema = {",
-              "   ",
               "    \"properties\": {",
               "        \"items\":{",
               "                \"type\": \"object\",",
