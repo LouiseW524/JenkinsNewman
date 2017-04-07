@@ -65,7 +65,7 @@
               "        \"items\":{",
               "                  ",
               "                    \"properties\": {         ",
-              "                    \"BuildMilestonesRecord\": { \"type\": \"integer\"},",
+              "                    \"BuildMilestonesRecordId\": { \"type\": \"string\"},",
               "                    \"BuildRecordId\": { \"type\": \"integer\"},",
               "    \t\t        \"PreviousBuildMilestone\": { \"type\": \"string\" },",
               "    \t\t        \"NewBuildMilestone\": { \"type\": \"string\" },",
