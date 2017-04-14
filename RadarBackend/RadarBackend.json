@@ -22,23 +22,16 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
+                  "",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "tests[\"Build Record Returned\"] = responseBody.has(\"BuildRecordID\");",
                   "tests[\"Unique Build Number\"] =! responseBody.has(\"A record already seems to exist \");",
                   "",
-                  "test_schema = {",
-                  "  ",
-                  "        \"items\":{",
-                  "                  ",
-                  "                    \"properties\": {         ",
-                  "                    \"BuildRecordID\": { \"type\": \"integer\"}",
-                  "                    }",
-                  "        }   ",
-                  "    };",
+                  "var test_int = { \"items\":{\"type\" : \"integer\"}};",
+                  "var integers = [jsonData.BuildRecordI;",
                   "",
-                  "tests[\"Testing schema\"] = tv4.validate(jsonData, test_schema);",
-                  "console.log(\"Validation errors: \", tv4.error);"
+                  "tests[\"Returned Integer\"] = tv4.validate(integers, test_int) ;",
+                  "tests[\"Build Record Returned\"] = responseBody.has(\"BuildRecordID\")"
                 ]
               }
             }
