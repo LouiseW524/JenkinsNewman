@@ -926,7 +926,7 @@
                   "var jsonData = JSON.parse(responseBody); ",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "tests[\"Response body has content\"] = (responseBody.length > 2);",
-                  "test_schema = {",
+                  "test_schema ={",
                   "  ",
                   "        \"items\":{",
                   "                  ",
@@ -944,7 +944,11 @@
                   "        }   ",
                   "    };",
                   "",
-                  "tests[\"Testing schema\"] = tv4.validate(jsonData, test_schema);",
+                  "tests[\"Testing schema\"] = tv4.validate(jsonData[0], test_schema);",
+                  "",
+                  "for (var i =0; i < jsonData.length ; i ++){",
+                  "    tests[\"correct list item \" + i] =  tv4.validate(jsonData[i], test_schema);",
+                  "}",
                   "console.log(\"Validation errors: \", tv4.error);"
                 ]
               }
