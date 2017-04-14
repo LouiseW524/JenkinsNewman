@@ -588,7 +588,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Specified details correct\"] =! responseBody.has(\"Could not find a record of a build\");",
+                  "tests[\"Specified parameters correct\"] =! responseBody.has(\"Could not find a record of a build\");",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "var jsonData = JSON.parse(responseBody); ",
