@@ -644,8 +644,18 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var jsonData = JSON.parse(responseBody);",
                   "tests[\"Valid build Information\"] =! responseBody.has(\"Could not find build\");",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "test_str = { \"items\":{\"type\" : \"string\"} };",
+                  "test_int = { \"items\":{\"type\" : \"integer\"}};",
+                  "var strings = [jsonData.ArtifactoryUrl];",
+                  "var integers = [jsonData.BuildRecordId, jsonData.BuildNumber];",
+                  "",
+                  "",
+                  "",
+                  " tests[\"Valiud Response Values \"] = (tv4.validate(strings, test_str) && tv4.validate(integers, test_int)); ",
                   ""
                 ]
               }
