@@ -797,13 +797,17 @@
                   "if(tv4.validate(jsonData, test_schema)){",
                   "    ",
                   "    var listLength  = jsonData.length;",
-                  "    postman.setEnvironmentVariable(\"schema\", jsonData[0]);",
+                  "    postman.setGlobalVariable(\"schema\", jsonData[0]);",
                   "        for( var i = 0 ; i < listLength; i ++)  {",
                   "        ",
                   "            tests[\"Valid Data in object\" + i] = tv4.validate(jsonData[i], \"schema\" );",
                   "        }",
-                  "    postman.clearEnvironmentVariable(\"schema\");",
-                  "}"
+                  "  postman.clearGlobalVariable(\"schema\");",
+                  "}",
+                  "",
+                  "",
+                  "",
+                  ""
                 ]
               }
             }
