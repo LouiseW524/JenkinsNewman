@@ -116,7 +116,9 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Valid BuildRecord Id added\"] =! responseBody.has(\"Expected a non-null integer for property: 'BuildRecordID'\");"
                 ]
               }
             }
