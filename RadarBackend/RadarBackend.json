@@ -44,7 +44,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{ \r\n  \"Solution\": \"Dynamic Endpoint\",\r\n  \"SolutionVersion\": \"1.0.0\",\r\n  \"Product\": \"ESP\",\r\n  \"ProductVersion\": \"11.0\",\r\n  \"Component\": \"ESP_UX\",\r\n  \"ComponentVersion\": \"11.0\",\r\n  \"BuildNumber\": \"106\",\r\n  \"BuildMilestone\": \"Queued\",\r\n  \"Branch\": \"trunk\",\r\n  \"URL\": \"http://build.orbit.intel.com/job/ESP/job/ESP_CHAIN/job/ESP_UX/101\"\r\n}\r\n"
+              "raw": "{ \r\n  \"Solution\": \"Dynamic Endpoint\",\r\n  \"SolutionVersion\": \"1.0.0\",\r\n  \"Product\": \"ESP\",\r\n  \"ProductVersion\": \"11.0\",\r\n  \"Component\": \"ESP_UX\",\r\n  \"ComponentVersion\": \"11.0\",\r\n  \"BuildNumber\": \"107\",\r\n  \"BuildMilestone\": \"Queued\",\r\n  \"Branch\": \"trunk\",\r\n  \"URL\": \"http://build.orbit.intel.com/job/ESP/job/ESP_CHAIN/job/ESP_UX/101\"\r\n}\r\n"
             },
             "description": ""
           },
