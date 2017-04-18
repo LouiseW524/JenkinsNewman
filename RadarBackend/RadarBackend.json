@@ -2345,6 +2345,51 @@
         {
           "_postman_id": "0c75b3ce-beaa-7c73-973b-eb72e527fc57",
           "name": "TestResults",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response body has content\"] = (responseBody.length > 2);",
+                  "",
+                  "test_schema = {",
+                  "  ",
+                  "        \"items\":{",
+                  "                  ",
+                  "                    \"properties\": {         ",
+                  "                    \"TestRecordId\": { \"type\": \"integer\"},",
+                  "                    \"BuildRecordID\": { \"type\": \"integer\"},",
+                  "                    \"TestType\": { \"type\": \"string\" },",
+                  "    \t\t        \"URL\": { \"type\": \"string\" },",
+                  "    \t\t        \"Platform\": { \"type\": \"string\"},",
+                  "                    \"Architecture\": { \"type\": \"string\"},",
+                  "    \t\t        \"Result\": { \"type\": \"string\" },",
+                  "    \t\t        \"TestSuites\": { \"type\": [\"array\",\"null\"] }",
+                  "                }",
+                  "            }   ",
+                  "        };",
+                  "tests[\"Schema is correct\"] = tv4.validate(jsonData, test_schema);",
+                  "if(tv4.validate(jsonData, test_schema)){",
+                  "    ",
+                  "    var listLength  = jsonData.length;",
+                  "   ",
+                  "        for( var i = 0 ; i < listLength; i ++)  {",
+                  "        ",
+                  "            tests[\"Valid Data in object\" + i] = tv4.validate(jsonData[i], test_schema );",
+                  "        }",
+                  "",
+                  "}",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/Test/TestResults?BuildRecordId=43",
             "method": "GET",
