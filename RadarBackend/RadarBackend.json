@@ -2009,6 +2009,34 @@
         {
           "_postman_id": "5e370e29-2811-f698-c16e-e0ad5df607b9",
           "name": "BuildMilestoneProgressions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "var listLength  = jsonData.length;",
+                  "",
+                  "test_str = { \"items\":{\"type\" : \"string\"} };",
+                  "test_int = { \"items\":{\"type\" : \"integer\"}};",
+                  "   ",
+                  "for( var i = 0 ; i < listLength; i ++)  {",
+                  " ",
+                  "    var strings = [jsonData[i].BuildMilestoneName];",
+                  "    var integers = [jsonData[i].BuildMileStoneId, jsonData[i].BuildMileStoneLevel];",
+                  "    tests[\"Schema Milestone \" + i + \" Pass\" ] = (tv4.validate(integers, test_int) && tv4.validate(strings, test_str));",
+                  "",
+                  "}",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response body has content\"] = (responseBody.length > 2);",
+                  "tests[\"Valid Build RecordId\"] =! responseBody.has(\"Object reference not set\");",
+                  ""
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/BuildMilestoneProgressions?BuildRecordId=108",
             "method": "GET",
