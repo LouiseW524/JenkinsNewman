@@ -1925,6 +1925,21 @@
         {
           "_postman_id": "281dca85-b96f-6307-1de4-d51a4c26169b",
           "name": "BuildMilestone",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Correct progressions between milestones\"] =! responseBody.has(\"You cannot progress\");",
+                  "",
+                  "tests[\"Correct build Record ID\"] =! responseBody.has(\"Could not get the build milestone ID\");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/BuildMilestone",
             "method": "POST",
