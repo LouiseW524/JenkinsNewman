@@ -1669,6 +1669,19 @@
         {
           "_postman_id": "f47c3ee7-13d3-aa20-ee1a-446740936e3e",
           "name": "BuildStep",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Valid BuildRecord Id added\"] =! responseBody.has(\"Expected a non-null integer for property: 'BuildRecordID'\");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/CodeCoverage",
             "method": "POST",
