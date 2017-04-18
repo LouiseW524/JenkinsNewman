@@ -854,9 +854,6 @@
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "",
-                  "",
-                  "",
                   "tests[\"Valid Quality Gate Name\"] = !responseBody.has(\"An active Quality Gate with this name already exists\");"
                 ]
               }
