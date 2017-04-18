@@ -1796,6 +1796,26 @@
         {
           "_postman_id": "620ffba5-87f8-f6ff-119c-e1740b2b7037",
           "name": "CoverityResults",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Valid Build Record ID {exists in DB}\"] = responseBody.has(\"Expected\");",
+                  "",
+                  "if(!resonseBody.has(\"Expected\")){",
+                  "tests[\"Valid Unused Build Record ID\"] = !responseBody.has(\"Coverity results already exist\");",
+                  "}",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/coverity/CoverityResults",
             "method": "POST",
