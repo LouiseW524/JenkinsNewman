@@ -1612,6 +1612,45 @@
         {
           "_postman_id": "088a64b6-64b0-b000-52e8-3899f70ae195",
           "name": "BuildRecord(GET)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response body has content\"] = (responseBody.length > 2);",
+                  "test_schema = {",
+                  "  ",
+                  "        \"items\":{",
+                  "                  ",
+                  "                    \"properties\": {         ",
+                  "                    \"BuildRecordID\": { \"type\": \"integer\"},",
+                  "                    \"SolutionID\": { \"type\": \"integer\"},",
+                  "    \t\t        \"ProductID\": { \"type\": \"integer\" },",
+                  "    \t\t        \"ComponentID\": { \"type\": \"integer\" },",
+                  "                    \"BuildNumber\": { \"type\": \"integer\" },",
+                  "    \t\t        \"BuildMilestone\": { \"type\": \"string\" },",
+                  "    \t\t        \"Branch\": { \"type\": \"string\" },",
+                  "    \t\t        \"Timestamp\": { \"type\": \"string\"},",
+                  "                    \"BuildURL\": { \"type\": \"string\"},",
+                  "    \t\t        \"ArtifactoryURL\": { \"type\": \"string\" },",
+                  "    \t\t        \"BuildResult\": { \"type\": \"string\" },",
+                  "                    \"BuildComment\": { \"type\": \"string\" },",
+                  "    \t\t        \"CodeCoverage\": { \"type\": [\"integer\", \"null\"] },",
+                  "    \t\t        \"OpenBugzillaDefects\": { \"type\": \"integer\"},",
+                  "    \t\t        \"BuildSteps\": { \"type\": [\"array\",\"null\"] }",
+                  "                    }",
+                  "        }   ",
+                  "    };",
+                  "",
+                  "tests[\"Testing schema\"] = tv4.validate(jsonData, test_schema);",
+                  "console.log(\"Validation errors: \", tv4.error);"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/BuildRecord?buildRecordId=46",
             "method": "GET",
