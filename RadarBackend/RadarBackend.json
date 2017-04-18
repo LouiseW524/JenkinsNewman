@@ -1574,6 +1574,23 @@
         {
           "_postman_id": "e5e6c188-8bc1-5616-4377-84c9bb44d60c",
           "name": "BuildRecord",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Unique Build Number\"] =! responseBody.has(\"A record already seems to exist \");",
+                  "",
+                  "tests[\"Build Record Returned\"] = responseBody.has(\"BuildRecordID\")"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/BuildRecord",
             "method": "POST",
