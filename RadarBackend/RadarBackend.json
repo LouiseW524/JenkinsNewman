@@ -941,7 +941,7 @@
                   "        }   ",
                   "    };",
                   "",
-                  "tests[\"Testing schema\"] = tv4.validate(jsonData[0], test_schema);",
+                  "tests[\"Valid response schema\"] = tv4.validate(jsonData[0], test_schema);",
                   "",
                   "for (var i =0; i < jsonData.length ; i ++){",
                   "    tests[\"correct list item \" + i] =  tv4.validate(jsonData[i], test_schema);",
