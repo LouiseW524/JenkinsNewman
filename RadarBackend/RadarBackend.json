@@ -613,7 +613,7 @@
                   "        }   ",
                   "    };",
                   "if(responseCode.code === 200){",
-                  "    tests[\"Correct response schema\"] = tv4.validate(jsonData, test_schema);",
+                  "    tests[\"Valid response schema\"] = tv4.validate(jsonData, test_schema);",
                   "}",
                   "console.log(\"Validation errors: \", tv4.error);"
                 ]
