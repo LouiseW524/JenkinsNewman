@@ -2055,6 +2055,19 @@
         {
           "_postman_id": "652710a3-19ff-c378-2d30-0532229faf36",
           "name": "BuildResult",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Valid build Record ID\"] =! responseBody.has(\"Can't find a build record\");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/BuildResult",
             "method": "POST",
