@@ -2479,6 +2479,43 @@
         {
           "_postman_id": "67041e52-1f43-a8b8-ca17-bfb391e0f71c",
           "name": "QualityGates",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response body has content\"] = (responseBody.length > 2);",
+                  "test_schema ={",
+                  "  ",
+                  "        \"items\":{",
+                  "                  ",
+                  "                    \"properties\": {         ",
+                  "                    \"QualityGateId\": { \"type\": \"integer\"},",
+                  "                    \"Name\": { \"type\": \"string\"},",
+                  "    \t\t        \"Description\": { \"type\": \"string\" },",
+                  "    \t\t        \"Type\": { \"type\": \"string\" },",
+                  "                    \"Pass\": { \"type\": \"integer\" },",
+                  "    \t\t        \"Fail\": { \"type\": \"integer\" },",
+                  "    \t\t        \"Min\": { \"type\": \"integer\" },",
+                  "    \t\t        \"Max\": { \"type\": \"integer\"},",
+                  "                    \"Active\": { \"type\": \"integer\"}",
+                  "                    }",
+                  "        }   ",
+                  "    };",
+                  "",
+                  "tests[\"Testing schema\"] = tv4.validate(jsonData[0], test_schema);",
+                  "",
+                  "for (var i =0; i < jsonData.length ; i ++){",
+                  "    tests[\"correct list item \" + i] =  tv4.validate(jsonData[i], test_schema);",
+                  "}",
+                  "console.log(\"Validation errors: \", tv4.error);"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/Quality/QualityGates",
             "method": "GET",
