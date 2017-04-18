@@ -1749,6 +1749,35 @@
         {
           "_postman_id": "3aaf530f-df29-964f-369a-7c0d0931c3c3",
           "name": "VerDirResults(GET)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response body has content\"] = (responseBody.length > 2);",
+                  "test_schema = {",
+                  "  ",
+                  "        \"items\":{",
+                  "                  ",
+                  "                    \"properties\": {         ",
+                  "                    \"BuildRecordId\": { \"type\": \"integer\"},",
+                  "                    \"FilesAnalyzed\": { \"type\": \"integer\"},",
+                  "    \t\t        \"FailureCount\": { \"type\": \"integer\" },",
+                  "    \t\t        \"Status\": { \"type\": \"string\" },",
+                  "                    \"FailureList\": { \"type\": [\"array\",\"null\"] }",
+                  "                    }",
+                  "        }   ",
+                  "    };",
+                  "",
+                  "tests[\"Testing schema\"] = tv4.validate(jsonData, test_schema);",
+                  "console.log(\"Validation errors: \", tv4.error);"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/verdir/VerDirResults?BuildRecordId=43",
             "method": "GET",
