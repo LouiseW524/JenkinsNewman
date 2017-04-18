@@ -2241,6 +2241,19 @@
         {
           "_postman_id": "0ca45438-0a41-55fd-4b46-9a20e5fd85dc",
           "name": "TestRecord",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Invalid test platform\"] =! responseBody.has(\"Invalid test platform value passed\");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/Test/TestRecord",
             "method": "POST",
