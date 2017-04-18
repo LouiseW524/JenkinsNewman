@@ -1,4 +1,5 @@
 error /(?i)^error/
+error /[Ee]rror/
 error /[Ff]ailure/
 error /[Bb]ad/
 warning /[Ww]arning/
