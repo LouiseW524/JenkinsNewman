@@ -466,7 +466,7 @@
                   " ",
                   "    var strings = [jsonData[i].BuildMilestoneName];",
                   "    var integers = [jsonData[i].BuildMileStoneId, jsonData[i].BuildMileStoneLevel];",
-                  "    tests[\"Schema Milestone \" + i + \" Pass\" ] = (tv4.validate(integers, test_int) && tv4.validate(strings, test_str));",
+                  "    tests[\"Valid Schema Milestone \" + i + \" Pass\" ] = (tv4.validate(integers, test_int) && tv4.validate(strings, test_str));",
                   "",
                   "}",
                   "",
