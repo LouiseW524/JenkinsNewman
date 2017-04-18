@@ -1837,6 +1837,42 @@
         {
           "_postman_id": "d2010d52-7636-cfe6-04f9-90a8d310d5de",
           "name": "CoverityResults(GET)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "tests[\"Response body has content\"] = (responseBody.length > 2);",
+                  "",
+                  "test_schema = {",
+                  "  ",
+                  "        \"items\":{",
+                  "                  ",
+                  "                    \"properties\": {         ",
+                  "                    \"CoverityResultId\": { \"type\": \"integer\"},",
+                  "                    \"BuildRecordId\": { \"type\": \"integer\"},",
+                  "    \t\t        \"FilesAnalyzed\": { \"type\": \"integer\" },",
+                  "    \t\t        \"TotalLOCAnalyzed\": { \"type\": \"integer\" },",
+                  "                    \"FunctionsAnalyzed\": { \"type\": \"integer\" },",
+                  "    \t\t        \"PathsAnalyzed\": { \"type\": \"integer\" },",
+                  "    \t\t        \"Duration\": { \"type\": \"string\" },",
+                  "    \t\t        \"URL\": { \"type\": \"string\" },",
+                  "    \t\t        \"NewDefectsFound\": { \"type\": \"integer\"},",
+                  "                    \"OutstandingDefectsFound\": {\"type\": \"integer\"},",
+                  "    \t\t        \"DefectsList\": { \"type\": [\"array\",\"null\"] }",
+                  "                    }",
+                  "        }   ",
+                  "    };",
+                  "",
+                  "tests[\"Schema Valid Response\"] = tv4.validate(jsonData, test_schema);",
+                  "console.log(\"Validation errors: \", tv4.error);"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/coverity/CoverityResults?BuildRecordId=43",
             "method": "GET",
