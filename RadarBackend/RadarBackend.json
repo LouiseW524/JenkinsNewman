@@ -2144,6 +2144,44 @@
         {
           "_postman_id": "489ae6d2-8c3d-4420-8b29-cac79192f77b",
           "name": "HighLevelBuildReport",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Specified parameters correct\"] =! responseBody.has(\"Could not find a record of a build\");",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "",
+                  "tests[\"Response body has content\"] = (responseBody.length > 2);",
+                  "test_schema = {",
+                  "  ",
+                  "        \"items\":{",
+                  "                  ",
+                  "                    \"properties\": {         ",
+                  "                    \"BuildRecordID\": { \"type\": \"integer\"},",
+                  "                    \"BuildNumber\": { \"type\": \"integer\" },",
+                  "    \t\t        \"Branch\": { \"type\": \"string\" },",
+                  "    \t\t        \"MileStone\": {\"type\": \"string\"},",
+                  "    \t\t        \"BuildResult\": { \"type\": \"string\" },",
+                  "    \t\t        \"BuildStartTime\": { \"type\": \"string\"},",
+                  "                    \"OpenBugzillaDefects\": { \"type\": \"integer\"},",
+                  "    \t\t        \"CoverityOutstandingDefects\": { \"type\": [\"integer\", \"null\"] },",
+                  "    \t\t        \"VerDirFailures\": { \"type\": \"integer\" },",
+                  "    \t\t        \"TestingResult\": { \"type\": \"string\" }",
+                  "                    }",
+                  "        }   ",
+                  "    };",
+                  "if(responseCode.code === 200){",
+                  "    tests[\"Correct response schema\"] = tv4.validate(jsonData, test_schema);",
+                  "}",
+                  "console.log(\"Validation errors: \", tv4.error);"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/HighLevelBuildReport?solutionName=Dynamic%20Endpoint&solutionVersion=1.0.0&productName=ESP&productVersion=11.0&componentName=ESP_UX&componentVersion=11.0&buildNumber=780&branch=trunk",
             "method": "GET",
