@@ -816,7 +816,7 @@
                   "   ",
                   "        for( var i = 0 ; i < listLength; i ++)  {",
                   "        ",
-                  "            tests[\"Valid Data in response\" + i] = tv4.validate(jsonData[i], test_schema );",
+                  "            tests[\"Valid Data in response array element\" + i] = tv4.validate(jsonData[i], test_schema );",
                   "        }",
                   "",
                   "}",
