@@ -696,7 +696,7 @@
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "tests[\"Invalid test platform\"] =! responseBody.has(\"Invalid test platform value passed\");"
+                  "tests[\"Valid test platform\"] =! responseBody.has(\"Invalid test platform value passed\");"
                 ]
               }
             }
