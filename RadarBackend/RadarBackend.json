@@ -1703,6 +1703,31 @@
         {
           "_postman_id": "9e5f9197-19f0-03fd-7c11-84e67bdd566a",
           "name": "VerDirResults",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "if(responseBody.length > 2){",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "test_schema = {",
+                  "          \"items\":{",
+                  "                    \"properties\": {         ",
+                  "                    \"Error\": { \"type\": \"string\"}",
+                  "                    }",
+                  "        }   ",
+                  "    };",
+                  "",
+                  "tests[\"Unique BuildRecordId sent\"] = !(tv4.validate(jsonData, test_schema));",
+                  "console.log(\"Validation errors: \", tv4.error);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/verdir/VerDirResults",
             "method": "POST",
