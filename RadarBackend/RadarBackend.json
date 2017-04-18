@@ -2310,6 +2310,20 @@
         {
           "_postman_id": "c241afc5-450e-4ae4-32dc-d581515f0e50",
           "name": "TestRecordResult",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "",
+                  "tests[\"TestRecordId valid\"] = !responseBody.has(\"Can't find a test record for the test record ID\");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/test/TestRecordResult",
             "method": "POST",
