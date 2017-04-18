@@ -1891,6 +1891,19 @@
         {
           "_postman_id": "aed01e6d-3a2e-feee-5178-e6ebb7246a73",
           "name": "ArtifactoryUrl",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Valid Build Record\"] =! responseBody.has(\"Can't find a build record \");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/ArtifactoryUrl",
             "method": "POST",
