@@ -2275,6 +2275,20 @@
         {
           "_postman_id": "0a959db9-7322-aeae-341d-a33ab37daa29",
           "name": "TestCaseResult",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "",
+                  "tests[\"Test Record ID Valid\"] =! responseBody.has(\"Test Suite specified was not found\");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/Test/TestCaseResult",
             "method": "POST",
