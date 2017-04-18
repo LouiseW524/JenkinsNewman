@@ -653,7 +653,6 @@
                   "var strings = [jsonData.ArtifactoryUrl];",
                   "var integers = [jsonData.BuildRecordId, jsonData.BuildNumber];",
                   "",
-                  "",
                   "tests[\"Valid Response schema \"] = (tv4.validate(strings, test_str) && tv4.validate(integers, test_int)); ",
                   ""
                 ]
