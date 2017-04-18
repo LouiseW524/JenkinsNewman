@@ -2569,27 +2569,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "ee66426f-944e-1aca-33b1-8b37e22cb5fc",
-          "name": "VerDirResults copy",
-          "request": {
-            "url": "http://radar.orbit.intel.com:8080/v1/api/verdir/VerDirResults",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{ \r\n  \"BuildRecordID\": \"43\",\r\n  \"BuildNumber\": \"101\",\r\n  \"FilesAnalyzed\": \"10\",\r\n  \"FailureCount\": \"5\",\r\n  \"Status\": \"Fail\",\r\n  \r\n  \"FailureList\": [\r\n    \r\n    {\"file\":\"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.dll\",\r\n    \"errors\": [ \"Signature checks excluded  (disabled by command line switch)\", \"File contains   unrecognised debug information type 13\" ]},\r\n    {\"file\":\"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\Win32\\\\EmBlEventViewStr.dll\",\r\n    \"errors\": [ \"Signature checks excluded  (disabled by command line switch)\", \"File contains unrecognised debug information type 13\" ]},\r\n    {\"file\":\"BUILD\\\\ESP\\\\PackagingEspSetup\\\\vcredist\\\\vc_redist2015.x86.exe\",\r\n    \"errors\": [ \"Company Name doesn't contain McAfee,  Intel Corporation, or Intel Security\", \"Signature checks excluded  (disabled by command line switch)\" ]},\r\n{\"file\":\"BUILD\\\\ESP\\\\BusinessObjects\\\\MaPkgSupplier\\\\SamplePkg\\\\build\\\\zip.exe\",\r\n    \"errors\": [ \"No version information\", \"ASLR compatibility flag isn't turned on\", \"DEP compatibility flag isn't turned on\" ]},\r\n    {\"file\":\"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\Win32\\\\BLSvcHost.exe\",\r\n    \"errors\": [ \"No version information\" ]}\r\n    ]\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
         }
       ]
     }
