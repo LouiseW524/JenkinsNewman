@@ -754,7 +754,6 @@
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "",
                   "tests[\"TestRecordId valid\"] = !responseBody.has(\"Can't find a test record for the test record ID\");"
                 ]
               }
