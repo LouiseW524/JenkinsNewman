@@ -426,7 +426,7 @@
                   "        }   ",
                   "    };",
                   "",
-                  "tests[\"Testing schema\"] = tv4.validate(jsonData, test_schema);",
+                  "tests[\"Response sche,a valid\"] = tv4.validate(jsonData, test_schema);",
                   "console.log(\"Validation errors: \", tv4.error);"
                 ]
               }
