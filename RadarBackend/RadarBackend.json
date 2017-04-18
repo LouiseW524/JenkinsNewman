@@ -1961,6 +1961,36 @@
         {
           "_postman_id": "380e2ca7-76ae-c5d4-8797-4d2a85b5543d",
           "name": "BuildMilestoneHistory",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response body has content\"] = (responseBody.length > 2);",
+                  "test_schema = {",
+                  "  ",
+                  "        \"items\":{",
+                  "                  ",
+                  "                    \"properties\": {         ",
+                  "                    \"BuildMilestonesRecordId\": { \"type\": \"integer\"},    ",
+                  "                    \"BuildRecordId\": { \"type\": \"integer\"},",
+                  "                    \"PreviousBuildMilestone\": { \"type\": \"string\" },",
+                  "    \t\t        \"NewBuildMilestone\": { \"type\": \"string\" },",
+                  "    \t\t        \"Username\": { \"type\": \"string\"},",
+                  "                    \"Comment\": { \"type\": \"string\"},",
+                  "    \t\t        \"Timestamp\": { \"type\": \"string\" }}",
+                  "        }   ",
+                  "    };",
+                  "",
+                  "tests[\"Testing schema\"] = tv4.validate(jsonData, test_schema);",
+                  "console.log(\"Validation errors: \", tv4.error);"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/BuildMilestoneHistory?BuildRecordId=1",
             "method": "GET",
