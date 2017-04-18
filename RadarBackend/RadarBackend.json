@@ -2089,6 +2089,40 @@
         {
           "_postman_id": "229ac75b-91e9-ba45-c416-f33ffeff50d7",
           "name": "HighLevelBuildReport(BuildRecordID)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response body has content\"] = (responseBody.length > 2);",
+                  "test_schema = {",
+                  "  ",
+                  "        \"items\":{",
+                  "                  ",
+                  "                    \"properties\": {         ",
+                  "                    \"BuildRecordID\": { \"type\": \"integer\"},",
+                  "                    \"BuildNumber\": { \"type\": \"integer\" },",
+                  "    \t\t        \"Branch\": { \"type\": \"string\" },",
+                  "    \t\t        \"MileStone\": {\"type\": \"string\"},",
+                  "    \t\t        \"BuildResult\": { \"type\": \"string\" },",
+                  "    \t\t        \"BuildStartTime\": { \"type\": \"string\"},",
+                  "                    \"OpenBugzillaDefects\": { \"type\": \"integer\"},",
+                  "    \t\t        \"CoverityOutstandingDefects\": { \"type\": [\"integer\", \"null\"] },",
+                  "    \t\t        \"VerDirFailures\": { \"type\": \"integer\" },",
+                  "    \t\t        \"TestingResult\": { \"type\": \"string\" }",
+                  "                    }",
+                  "        }   ",
+                  "    };",
+                  "",
+                  "tests[\"Correct response schema\"] = tv4.validate(jsonData, test_schema);",
+                  "console.log(\"Validation errors: \", tv4.error);"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/HighLevelBuildReport?BuildRecordId=1",
             "method": "GET",
