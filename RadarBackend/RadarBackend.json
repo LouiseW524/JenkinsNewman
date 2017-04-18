@@ -248,7 +248,7 @@
                   "",
                   "tests[\"Valid Build Record ID {exists in DB}\"] = responseBody.has(\"Expected\");",
                   "",
-                  "if(!resonseBody.has(\"Expected\")){",
+                  "if(!responseBody.has(\"Expected\")){",
                   "tests[\"Valid Unused Build Record ID\"] = !responseBody.has(\"Coverity results already exist\");",
                   "}",
                   "",
@@ -269,7 +269,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{ \r\n  \"BuildRecordID\": \"1\",\r\n  \"FilesAnalyzed\": \"3\",\r\n  \"TotalLOCAnalyzed\": \"3143\",\r\n  \"FunctionsAnalyzed\": \"211\",\r\n  \"PathsAnalyzed\": \"23\",\r\n  \"Duration\": \"00:00:12\",\r\n  \"URL\": \"http://beaappcov1.corp.nai.org\",\r\n  \"NewDefectsFound\": \"3\",\r\n  \"OutstandingDefects\": \"9\",\r\n\r\n  \"DefectsList\": [\r\n    \r\n    {\r\n      \"Cid\": \"120435\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.cpp\",\r\n      \"Category\": \"BUFFER_OVERFLOW\",\r\n      \"Type\": \"Buffer overflow\"\r\n    },\r\n     \r\n    {\r\n      \"Cid\": \"120436\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.cpp\",\r\n      \"Category\": \"FORWARD_NULL\",\r\n      \"Type\": \"Deferencing Null Pointer pi\"\r\n    },\r\n    \r\n    {\r\n      \"Cid\": \"120437\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\foo.cpp\",\r\n      \"Category\": \"FORWARD_NULL\",\r\n      \"Type\": \"Deferencing Null Pointer pi\"\r\n    }\r\n    ]\r\n}\r\n"
+              "raw": "{ \r\n  \"BuildRecordID\": \"15\",\r\n  \"FilesAnalyzed\": \"3\",\r\n  \"TotalLOCAnalyzed\": \"3143\",\r\n  \"FunctionsAnalyzed\": \"211\",\r\n  \"PathsAnalyzed\": \"23\",\r\n  \"Duration\": \"00:00:12\",\r\n  \"URL\": \"http://beaappcov1.corp.nai.org\",\r\n  \"NewDefectsFound\": \"3\",\r\n  \"OutstandingDefects\": \"9\",\r\n\r\n  \"DefectsList\": [\r\n    \r\n    {\r\n      \"Cid\": \"120435\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.cpp\",\r\n      \"Category\": \"BUFFER_OVERFLOW\",\r\n      \"Type\": \"Buffer overflow\"\r\n    },\r\n     \r\n    {\r\n      \"Cid\": \"120436\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.cpp\",\r\n      \"Category\": \"FORWARD_NULL\",\r\n      \"Type\": \"Deferencing Null Pointer pi\"\r\n    },\r\n    \r\n    {\r\n      \"Cid\": \"120437\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\foo.cpp\",\r\n      \"Category\": \"FORWARD_NULL\",\r\n      \"Type\": \"Deferencing Null Pointer pi\"\r\n    }\r\n    ]\r\n}\r\n"
             },
             "description": ""
           },
