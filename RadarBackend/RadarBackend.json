@@ -2445,6 +2445,19 @@
         {
           "_postman_id": "3aa6e63d-4592-1b63-cec4-c38ee3da548b",
           "name": "QualityGateUpdate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Quality gate specified exists\"] = !responseBody.has(\"The Quality Gate specified to update doesn't seem to exist \");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/Quality/QualityGateUpdate",
             "method": "POST",
