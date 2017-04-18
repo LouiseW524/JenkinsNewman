@@ -2408,6 +2408,22 @@
         {
           "_postman_id": "7e945c3b-b03d-717f-91d4-94976aca0eb5",
           "name": "QualityGate(Post)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "tests[\"Valid Quality Gate Name\"] = !responseBody.has(\"An active Quality Gate with this name already exists\");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/Quality/QualityGate",
             "method": "POST",
