@@ -2200,6 +2200,29 @@
         {
           "_postman_id": "35ea1e16-1277-af35-e35e-8ca02a4f6c18",
           "name": "BuildSearch",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Valid build Information\"] =! responseBody.has(\"Could not find build\");",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "test_str = { \"items\":{\"type\" : \"string\"} };",
+                  "test_int = { \"items\":{\"type\" : \"integer\"}};",
+                  "var strings = [jsonData.ArtifactoryUrl];",
+                  "var integers = [jsonData.BuildRecordId, jsonData.BuildNumber];",
+                  "",
+                  "",
+                  "",
+                  " tests[\"Valid Response Values \"] = (tv4.validate(strings, test_str) && tv4.validate(integers, test_int)); ",
+                  ""
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "http://radar.orbit.intel.com:8080/v1/api/build/BuildSearch?solutionName=Dynamic%20Endpoint&solutionVersion=1.0.0&productName=ESP&productVersion=11.0&componentName=ESP_INSTALLER&componentVersion=11.0&milestone=Released%20to%20qa&useExactMilestone=false",
             "method": "GET",
