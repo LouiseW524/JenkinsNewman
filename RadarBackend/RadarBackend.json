@@ -27,7 +27,23 @@
                   "",
                   "tests[\"Unique Build Number\"] =! responseBody.has(\"A record already seems to exist \");",
                   "",
-                  "tests[\"Build Record Returned\"] = responseBody.has(\"BuildRecordID\")"
+                  "tests[\"Build Record Returned\"] = responseBody.has(\"BuildRecordID\")",
+                  "",
+                  "var jsonData = JSON.parse(responseBody); ",
+                  "",
+                  "if(statusCode.code ===200){",
+                  "    test_schema = {",
+                  "      ",
+                  "            \"items\":{",
+                  "                        \"properties\": {         ",
+                  "                        \"BuildRecordId\": { \"type\": \"integer\"},",
+                  "                        }",
+                  "            }   ",
+                  "        };",
+                  "    ",
+                  "    tests[\"Return schema valid\"] = tv4.validate(jsonData, test_schema);",
+                  "    console.log(\"Validation errors: \", tv4.error);",
+                  "}"
                 ]
               }
             }
