@@ -1,7 +1,7 @@
 {
   "variables": [],
   "info": {
-    "name": "RadarBackendLocal",
+    "name": "RadarBackend(Local)",
     "_postman_id": "a0567104-bf80-ad33-a487-6ca5609d93df",
     "description": "",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
