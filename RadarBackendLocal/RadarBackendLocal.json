@@ -63,7 +63,6 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody); ",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "var listLength  = jsonData.length;",
                   "tests[\"Response body has content\"] = (responseBody.length > 2);",
                   "test_schema = {",
                   "  ",
