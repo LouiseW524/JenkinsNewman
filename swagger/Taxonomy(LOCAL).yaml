@@ -1,0 +1,1108 @@
+swagger: 2.0
+info:
+  version: 1.0
+  title: Taxonomy(LOCAL)
+  description: Contains all the Radar Taxonomy APIs running locally on localhost
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: localhost:4040
+basePath: /api
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /query/ProductVersionAsString:
+    get:
+      description: 'TODO: Add Description'
+      summary: ProductVersionAsString
+      tags:
+      - Taxonomy(local)
+      operationId: ProductVersionAsString
+      produces:
+      - application/json
+      parameters:
+      - name: productID
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/ProductVersionAsString?productID=2
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ProductVersionAsString
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/ComponentID:
+    get:
+      description: 'TODO: Add Description'
+      summary: ComponentID
+      tags:
+      - Taxonomy(local)
+      operationId: ComponentID
+      produces:
+      - application/json
+      parameters:
+      - name: solutionName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: solutionVersion
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productVersion
+        in: query
+        required: true
+        type: number
+        format: double
+        description: ''
+      - name: componentName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: componentVersion
+        in: query
+        required: true
+        type: number
+        format: double
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/ComponentID?solutionName=Dynamic Endpoint&solutionVersion=1.0.0&productName=ESP&productVersion=11.0&componentName=ESP_UX&componentVersion=11.0
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ComponentID
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /validation/ComponentNameValidation:
+    get:
+      description: 'TODO: Add Description'
+      summary: ComponentNameValidation
+      tags:
+      - Taxonomy(local)
+      operationId: ComponentNameValidation
+      produces:
+      - application/json
+      parameters:
+      - name: solutionName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: solutionVersion
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productVersion
+        in: query
+        required: true
+        type: number
+        format: double
+        description: ''
+      - name: componentName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /validation/ComponentNameValidation?solutionName=Dynamic Endpoint&solutionVersion=2.0.0&productName=ESP&productVersion=11.1&componentName=ESP_UX
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ComponentNameValidation
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/ComponentShortName:
+    get:
+      description: 'TODO: Add Description'
+      summary: ComponentShortName
+      tags:
+      - Taxonomy(local)
+      operationId: ComponentShortName
+      produces:
+      - application/json
+      parameters:
+      - name: componentID
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/ComponentShortName?componentID=6
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ComponentShortName
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/ComponentVersionAsString:
+    get:
+      description: 'TODO: Add Description'
+      summary: ComponentVersionAsString
+      tags:
+      - Taxonomy(local)
+      operationId: ComponentVersionAsString
+      produces:
+      - application/json
+      parameters:
+      - name: componentID
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/ComponentVersionAsString?componentID=6
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ComponentVersionAsString
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /validation/ComponentVersionValidation:
+    get:
+      description: 'TODO: Add Description'
+      summary: ComponentVersionValidation
+      tags:
+      - Taxonomy(local)
+      operationId: ComponentVersionValidation
+      produces:
+      - application/json
+      parameters:
+      - name: solutionName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: solutionVersion
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productVersion
+        in: query
+        required: true
+        type: number
+        format: double
+        description: ''
+      - name: componentName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: componentVersion
+        in: query
+        required: true
+        type: number
+        format: double
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /validation/ComponentVersionValidation?solutionName=Dynamic Endpoint&solutionVersion=2.0.0&productName=ESP&productVersion=11.1&componentName=ESP_UX&componentVersion=11.1
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ComponentVersionValidation
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/ProductBugzillaName:
+    get:
+      description: 'TODO: Add Description'
+      summary: ProductBugzillaName
+      tags:
+      - Taxonomy(local)
+      operationId: ProductBugzillaName
+      produces:
+      - application/json
+      parameters:
+      - name: productid
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/ProductBugzillaName?productid=1
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ProductBugzillaName
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/ProductID:
+    get:
+      description: 'TODO: Add Description'
+      summary: ProductID
+      tags:
+      - Taxonomy(local)
+      operationId: ProductID
+      produces:
+      - application/json
+      parameters:
+      - name: solutionName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: solutionVersion
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productVersion
+        in: query
+        required: true
+        type: number
+        format: double
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/ProductID?solutionName=Dynamic Endpoint&solutionVersion=1.0.0&productName=ESP&productVersion=11.0
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ProductID
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/ProductLongName:
+    get:
+      description: 'TODO: Add Description'
+      summary: ProductLongName
+      tags:
+      - Taxonomy(local)
+      operationId: ProductLongName
+      produces:
+      - application/json
+      parameters:
+      - name: productID
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/ProductLongName?productID=1
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ProductLongName
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /validation/ProductNameValidation:
+    get:
+      description: 'TODO: Add Description'
+      summary: ProductNameValidation
+      tags:
+      - Taxonomy(local)
+      operationId: ProductNameValidation
+      produces:
+      - application/json
+      parameters:
+      - name: solutionName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: solutionVersion
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /validation/ProductNameValidation?solutionName=Dynamic Endpoint&solutionVersion=1.0.0&productName=ESP
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ProductNameValidation
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/ComponentLongName:
+    get:
+      description: 'TODO: Add Description'
+      summary: ComponentLongName
+      tags:
+      - Taxonomy(local)
+      operationId: ComponentLongName
+      produces:
+      - application/json
+      parameters:
+      - name: componentID
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/ComponentLongName?componentID=7
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ComponentLongName
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /validation/ProductVersionValidation:
+    get:
+      description: 'TODO: Add Description'
+      summary: ProductVersionValidation
+      tags:
+      - Taxonomy(local)
+      operationId: ProductVersionValidation
+      produces:
+      - application/json
+      parameters:
+      - name: solutionName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: solutionVersion
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: productVersion
+        in: query
+        required: true
+        type: number
+        format: double
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /validation/ProductVersionValidation?solutionName=Dynamic Endpoint&solutionVersion=2.0.0&productName=ESP&productVersion=11.3
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: ProductVersionValidation
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/Products:
+    get:
+      description: 'TODO: Add Description'
+      summary: Products
+      tags:
+      - Taxonomy(local)
+      operationId: Products
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/Products
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Products
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/SolutionID:
+    get:
+      description: 'TODO: Add Description'
+      summary: SolutionID
+      tags:
+      - Taxonomy(local)
+      operationId: SolutionID
+      produces:
+      - application/json
+      parameters:
+      - name: solutionName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: solutionVersion
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/SolutionID?solutionName=Dynamic Endpoint&solutionVersion=2.0.0
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: SolutionID
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/SolutionName:
+    get:
+      description: 'TODO: Add Description'
+      summary: SolutionName
+      tags:
+      - Taxonomy(local)
+      operationId: SolutionName
+      produces:
+      - application/json
+      parameters:
+      - name: solutionID
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/SolutionName?solutionID=1
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: SolutionName
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /validation/SolutionNameValidation:
+    get:
+      description: 'TODO: Add Description'
+      summary: SolutionNameValidation
+      tags:
+      - Taxonomy(local)
+      operationId: SolutionNameValidation
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /validation/SolutionNameValidation?name=Dynamic Endpoint
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: SolutionNameValidation
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/SolutionTaxonomy:
+    get:
+      description: 'TODO: Add Description'
+      summary: SolutionTaxonomy
+      tags:
+      - Taxonomy(local)
+      operationId: SolutionTaxonomy
+      produces:
+      - application/json
+      parameters:
+      - name: solutionName
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: solutionVersion
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/SolutionTaxonomy?solutionName=Dynamic Endpoint&solutionVersion=1.0.0
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: SolutionTaxonomy
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/SolutionVersionAsString:
+    get:
+      description: 'TODO: Add Description'
+      summary: SolutionVersionAsString
+      tags:
+      - Taxonomy(local)
+      operationId: SolutionVersionAsString
+      produces:
+      - application/json
+      parameters:
+      - name: solutionID
+        in: query
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/SolutionVersionAsString?solutionID=1
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: SolutionVersionAsString
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /validation/SolutionVersionValidation:
+    get:
+      description: 'TODO: Add Description'
+      summary: SolutionVersionValidation
+      tags:
+      - Taxonomy(local)
+      operationId: SolutionVersionValidation
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: version
+        in: query
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /validation/SolutionVersionValidation?name=Dynamic Endpoint&version=1.0.0
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: SolutionVersionValidation
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/Solutions:
+    get:
+      description: 'TODO: Add Description'
+      summary: Solutions
+      tags:
+      - Taxonomy(local)
+      operationId: Solutions
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/Solutions
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Solutions
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /query/TaxonomyForClient:
+    get:
+      description: 'TODO: Add Description'
+      summary: TaxonomyForClient
+      tags:
+      - Taxonomy(local)
+      operationId: TaxonomyForClient
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+      security: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /query/TaxonomyForClient
+          headers:
+            Content-Type: application/json
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: TaxonomyForClient
+        x-testDescription: 'TODO: Add Description'
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
