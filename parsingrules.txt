@@ -1,6 +1,7 @@
 error /(?i)^error/
 error /[Ee]rror/
 error /[Ff]ailure/
+error /(?i)^FAIL/
 error /[Bb]ad/
 warning /[Ww]arning/
 warning /WARNING/
