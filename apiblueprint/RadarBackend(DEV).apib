@@ -1,0 +1,1001 @@
+FORMAT: 1A
+HOST: http://devradar.orbit.intel.com:8080/v1/api
+
+# RadarBackend(DEV)
+Contains all the Radar Backend APIs to run on DevRadar
+
+# Group RadarBackendDevRadar
+
+## Build BuildRecord [/build/BuildRecord]
+
+### BuildRecord [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (BuildRecordRequest)
+
+    + Body
+
+            {
+                "Solution": "Dynamic Endpoint",
+                "SolutionVersion": "1.0.0",
+                "Product": "ESP",
+                "ProductVersion": "11.0",
+                "Component": "ESP_UX",
+                "ComponentVersion": "11.0",
+                "BuildNumber": "102",
+                "BuildMilestone": "Queued",
+                "Branch": "trunk",
+                "URL": "http://build.orbit.intel.com/job/ESP/job/ESP_CHAIN/job/ESP_UX/100"
+            }
+
+
++ Response 200 
+
+
+
+
+## Build BuildRecord [/build/BuildRecord{?buildRecordId}]
+
+### BuildRecordGET [GET]
+TODO: Add Description
++ Parameters
+    + buildRecordId (number, optional) -
+
+        + Default: 46
+        + Sample: 46
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Build BuildStep [/build/BuildStep]
+
+### BuildStep [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (BuildStepRequest)
+
+    + Body
+
+            {
+                "BuildRecordId": "10",
+                "StepName": "Compilation",
+                "StepResult": "Pass"
+            }
+
+
++ Response 200 
+
+
+
+
+## Verdir VerDirResults [/verdir/VerDirResults]
+
+### VerDirResults [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (VerDirResultsRequest)
+
+    + Body
+
+            {
+                "BuildRecordID": "43",
+                "BuildNumber": "101",
+                "FilesAnalyzed": "10",
+                "FailureCount": "5",
+                "Status": "Fail",
+                "FailureList": [
+                    {
+                        "file": "BUILD\\ESP\\BuildResults\\Release\\x64\\EmBlEventViewStr.dll",
+                        "errors": [
+                            "Signature checks excluded  (disabled by command line switch)",
+                            "File contains   unrecognised debug information type 13"
+                        ]
+                    },
+                    {
+                        "file": "BUILD\\ESP\\BuildResults\\Release\\Win32\\EmBlEventViewStr.dll",
+                        "errors": [
+                            "Signature checks excluded  (disabled by command line switch)",
+                            "File contains unrecognised debug information type 13"
+                        ]
+                    },
+                    {
+                        "file": "BUILD\\ESP\\PackagingEspSetup\\vcredist\\vc_redist2015.x86.exe",
+                        "errors": [
+                            "Company Name doesn't contain McAfee,  Intel Corporation, or Intel Security",
+                            "Signature checks excluded  (disabled by command line switch)"
+                        ]
+                    },
+                    {
+                        "file": "BUILD\\ESP\\BusinessObjects\\MaPkgSupplier\\SamplePkg\\build\\zip.exe",
+                        "errors": [
+                            "No version information",
+                            "ASLR compatibility flag isn't turned on",
+                            "DEP compatibility flag isn't turned on"
+                        ]
+                    },
+                    {
+                        "file": "BUILD\\ESP\\BuildResults\\Release\\Win32\\BLSvcHost.exe",
+                        "errors": [
+                            "No version information"
+                        ]
+                    }
+                ]
+            }
+
+
++ Response 200 
+
+
+
+
+## Verdir VerDirResults [/verdir/VerDirResults{?BuildRecordId}]
+
+### VerDirResultsGET [GET]
+TODO: Add Description
++ Parameters
+    + BuildRecordId (number, optional) -
+
+        + Default: 43
+        + Sample: 43
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Coverity CoverityResults [/coverity/CoverityResults]
+
+### CoverityResults [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (CoverityResultsRequest)
+
+    + Body
+
+            {
+                "BuildRecordID": "43",
+                "FilesAnalyzed": "3",
+                "TotalLOCAnalyzed": "3143",
+                "FunctionsAnalyzed": "211",
+                "PathsAnalyzed": "23",
+                "Duration": "00:00:12",
+                "URL": "http://beaappcov1.corp.nai.org",
+                "NewDefectsFound": "3",
+                "OutstandingDefects": "9",
+                "DefectsList": [
+                    {
+                        "Cid": "120435",
+                        "Severity": "unspecified",
+                        "Classification": "unclassified",
+                        "Impact": "undecided",
+                        "File": "BUILD\\ESP\\BuildResults\\Release\\x64\\EmBlEventViewStr.cpp",
+                        "Category": "BUFFER_OVERFLOW",
+                        "Type": "Buffer overflow"
+                    },
+                    {
+                        "Cid": "120436",
+                        "Severity": "unspecified",
+                        "Classification": "unclassified",
+                        "Impact": "undecided",
+                        "File": "BUILD\\ESP\\BuildResults\\Release\\x64\\EmBlEventViewStr.cpp",
+                        "Category": "FORWARD_NULL",
+                        "Type": "Deferencing Null Pointer pi"
+                    },
+                    {
+                        "Cid": "120437",
+                        "Severity": "unspecified",
+                        "Classification": "unclassified",
+                        "Impact": "undecided",
+                        "File": "BUILD\\ESP\\BuildResults\\Release\\x64\\foo.cpp",
+                        "Category": "FORWARD_NULL",
+                        "Type": "Deferencing Null Pointer pi"
+                    }
+                ]
+            }
+
+
++ Response 200 
+
+
+
+
+## Coverity CoverityResults [/coverity/CoverityResults{?BuildRecordId}]
+
+### CoverityResultsGET [GET]
+TODO: Add Description
++ Parameters
+    + BuildRecordId (number, optional) -
+
+        + Default: 43
+        + Sample: 43
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Build ArtifactoryUrl [/build/ArtifactoryUrl]
+
+### ArtifactoryUrl [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (ArtifactoryUrlRequest)
+
+    + Body
+
+            {
+                "BuildRecordID": "43",
+                "ArtifactoryUrl": "http://artifactoryurl/build43"
+            }
+
+
++ Response 200 
+
+
+
+
+## Build BuildMilestone [/build/BuildMilestone]
+
+### BuildMilestone [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (BuildMilestoneRequest)
+
+    + Body
+
+            {
+                "BuildRecordID": "112",
+                "BuildMilestone": "Released to QA",
+                "Username": "jcollin1",
+                "Comment": "Test comment"
+            }
+
+
++ Response 200 
+
+
+
+### BuildMilestoneGET [GET]
+TODO: Add Description
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Build BuildMilestoneHistory [/build/BuildMilestoneHistory{?BuildRecordId}]
+
+### BuildMilestoneHistory [GET]
+TODO: Add Description
++ Parameters
+    + BuildRecordId (number, optional) -
+
+        + Default: 1
+        + Sample: 1
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Build BuildMilestoneProgressions [/build/BuildMilestoneProgressions{?BuildRecordId}]
+
+### BuildMilestoneProgressions [GET]
+TODO: Add Description
++ Parameters
+    + BuildRecordId (number, optional) -
+
+        + Default: 108
+        + Sample: 108
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Build BuildResult [/build/BuildResult]
+
+### BuildResult [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (BuildResultRequest)
+
+    + Body
+
+            {
+                "BuildRecordID": "43",
+                "BuildResult": "Passed",
+                "BuildComment": "No Quality Gate Violations."
+            }
+
+
++ Response 200 
+
+
+
+
+## Build HighLevelBuildReport [/build/HighLevelBuildReport{?BuildRecordId}]
+
+### HighLevelBuildReportBuildRecordID [GET]
+TODO: Add Description
++ Parameters
+    + BuildRecordId (number, optional) -
+
+        + Default: 111
+        + Sample: 111
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Build HighLevelBuildReport [/build/HighLevelBuildReport{?solutionName,solutionVersion,productName,productVersion,componentName,componentVersion,buildNumber,branch}]
+
+### HighLevelBuildReport [GET]
+TODO: Add Description
++ Parameters
+    + solutionName (string, optional) -
+
+        + Default: Dynamic%20Endpoint
+        + Sample: Dynamic%20Endpoint
+    + solutionVersion (string, optional) -
+
+        + Default: 1.0.0
+        + Sample: 1.0.0
+    + productName (string, optional) -
+
+        + Default: ESP
+        + Sample: ESP
+    + productVersion (number, optional) -
+
+        + Default: 11.0
+        + Sample: 11.0
+    + componentName (string, optional) -
+
+        + Default: ESP_UX
+        + Sample: ESP_UX
+    + componentVersion (number, optional) -
+
+        + Default: 11.0
+        + Sample: 11.0
+    + buildNumber (number, optional) -
+
+        + Default: 780
+        + Sample: 780
+    + branch (string, optional) -
+
+        + Default: trunk
+        + Sample: trunk
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Build BuildSearch [/build/BuildSearch{?solutionName,solutionVersion,productName,productVersion,componentName,componentVersion,milestone,useExactMilestone}]
+
+### BuildSearch [GET]
+TODO: Add Description
++ Parameters
+    + solutionName (string, optional) -
+
+        + Default: Dynamic%20Endpoint
+        + Sample: Dynamic%20Endpoint
+    + solutionVersion (string, optional) -
+
+        + Default: 1.0.0
+        + Sample: 1.0.0
+    + productName (string, optional) -
+
+        + Default: ESP
+        + Sample: ESP
+    + productVersion (number, optional) -
+
+        + Default: 11.0
+        + Sample: 11.0
+    + componentName (string, optional) -
+
+        + Default: ESP_INSTALLER
+        + Sample: ESP_INSTALLER
+    + componentVersion (number, optional) -
+
+        + Default: 11.0
+        + Sample: 11.0
+    + milestone (string, optional) -
+
+        + Default: Released%20to%20qa
+        + Sample: Released%20to%20qa
+    + useExactMilestone (boolean, optional) -
+
+        + Default: false
+        + Sample: false
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Test TestRecord [/Test/TestRecord]
+
+### TestRecord [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (TestRecordRequest)
+
+    + Body
+
+            {
+                "BuildRecordID": "110",
+                "TestType": "BVT",
+                "Platform": "Windows",
+                "Architecture": "x86",
+                "URL": "http://your.test.rig/results/build/100/bvt",
+                "Suites": [
+                    {
+                        "TestSuiteName": "GTI",
+                        "TotalNumberOfTests": "100"
+                    },
+                    {
+                        "TestSuiteName": "Logger",
+                        "TotalNumberOfTests": "14"
+                    }
+                ]
+            }
+
+
++ Response 200 
+
+
+
+
+## Test TestCaseResult [/Test/TestCaseResult]
+
+### TestCaseResult [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (TestCaseResultRequest)
+
+    + Body
+
+            {
+                "TestRecordID": "7",
+                "TestSuiteName": "GTI",
+                "TestCaseName": "Test good file",
+                "TestCaseResult": "Pass"
+            }
+
+
++ Response 200 
+
+
+
+
+## Test TestRecordResult [/test/TestRecordResult]
+
+### TestRecordResult [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (TestRecordResultRequest)
+
+    + Body
+
+            {
+                "TestRecordID": "28",
+                "TestResult": "Failed"
+            }
+
+
++ Response 200 
+
+
+
+
+## Test TestResults [/Test/TestResults{?BuildRecordId}]
+
+### TestResults [GET]
+TODO: Add Description
++ Parameters
+    + BuildRecordId (number, optional) -
+
+        + Default: 43
+        + Sample: 43
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Quality QualityGate [/Quality/QualityGate]
+
+### QualityGatePost [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (QualityGatePostRequest)
+
+    + Body
+
+            {
+                "Name": "Jimmy",
+                "Description": "# of defects found",
+                "Type": "count",
+                "Pass": "0",
+                "Fail": "15",
+                "Min": "0",
+                "Max": "100",
+                "Active": "1"
+            }
+
+
++ Response 200 
+
+
+
+
+## Quality QualityGateUpdate [/Quality/QualityGateUpdate]
+
+### QualityGateUpdate [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (QualityGateUpdateRequest)
+
+    + Body
+
+            {
+                "Name": "VerDir",
+                "Description": "# of defects found",
+                "Type": "count",
+                "Pass": "0",
+                "Fail": "10",
+                "Min": "0",
+                "Max": "100",
+                "Active": "1"
+            }
+
+
++ Response 200 
+
+
+
+
+## Quality QualityGates [/Quality/QualityGates]
+
+### QualityGates [GET]
+TODO: Add Description
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+## Globalyzer GlobalyzerResults [/globalyzer/GlobalyzerResults]
+
+### GlobalyzerResults [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (GlobalyzerResultsRequest)
+
+    + Body
+
+            {
+                "Project": "Project 1",
+                "Language": "English",
+                "Version": "10.0.0",
+                "ConfigurationType": "Release",
+                "ReleaseNumber": "123",
+                "ReleaseType": "Main",
+                "SVNBranch": "/trunk/main",
+                "BuildNumber": "354",
+                "Date": "12/07/16 12:0:0",
+                "GlobalyzerProjectName": "Test Proj 1",
+                "GlobalyzerBasePath": "C:/Projects/L10N/Test/Globalyzer/Results",
+                "Scans": [
+                    {
+                        "Name": "JavaScript",
+                        "RuleSetName": "Test projects JavaScript rules",
+                        "Language": "JavaScript",
+                        "LastScanDate": "12/06/16",
+                        "FileCount": 963,
+                        "LineCount": 27362,
+                        "Results": [
+                            {
+                                "Type": "Embedded Strings",
+                                "Active": 1973,
+                                "Ignore": 200,
+                                "Invalid": 195,
+                                "StickyIgnore": 0,
+                                "Resolved": 0,
+                                "Todo": 0,
+                                "Filtered": 1290
+                            },
+                            {
+                                "Type": "Locale sensitive methods",
+                                "Active": 50,
+                                "Ignore": 20,
+                                "Invalid": 10,
+                                "StickyIgnore": 10,
+                                "Resolved": 50,
+                                "Todo": 0,
+                                "Filtered": 122
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "CPlusPlus",
+                        "RuleSetName": "Test projects C++ rules",
+                        "Language": "C++",
+                        "LastScanDate": "12/7/16",
+                        "FileCount": 1000,
+                        "LineCount": 100000,
+                        "Results": [
+                            {
+                                "Type": "Embedded Strings",
+                                "Active": 500,
+                                "Ignore": 2,
+                                "Invalid": 0,
+                                "StickyIgnore": 0,
+                                "Resolved": 600,
+                                "Todo": 0,
+                                "Filtered": 12
+                            },
+                            {
+                                "Type": "Locale sensitive methods",
+                                "Active": 1234,
+                                "Ignore": 20,
+                                "Invalid": 10,
+                                "StickyIgnore": 10,
+                                "Resolved": 50,
+                                "Todo": 0,
+                                "Filtered": 122
+                            }
+                        ]
+                    }
+                ]
+            }
+
+
++ Response 200 
+
+
+
+
+## Build CodeCoverage [/build/CodeCoverage]
+
+### CodeCoverage [POST]
+TODO: Add Description
+
++ Request (application/json)
+    + Attributes (CodeCoverageRequest)
+
+    + Body
+
+            {
+                "BuildRecordID": "20",
+                "Coverage": "77%"
+            }
+
+
++ Response 200 
+
+
+
+
+## Build HighLevelBuildReportsForComponent [/build/HighLevelBuildReportsForComponent{?solutionName,solutionVersion,productName,productVersion,componentName,componentVersion}]
+
+### HighLevelBuildReportsForComponent [GET]
+TODO: Add Description
++ Parameters
+    + solutionName (string, optional) -
+
+        + Default: Dynamic%20Endpoint
+        + Sample: Dynamic%20Endpoint
+    + solutionVersion (string, optional) -
+
+        + Default: 3.0.0
+        + Sample: 3.0.0
+    + productName (string, optional) -
+
+        + Default: ESP
+        + Sample: ESP
+    + productVersion (number, optional) -
+
+        + Default: 11.0
+        + Sample: 11.0
+    + componentName (string, optional) -
+
+        + Default: ESP
+        + Sample: ESP
+    + componentVersion (number, optional) -
+
+        + Default: 11.0
+        + Sample: 11.0
+
++ Request (application/json)
+
+
+
++ Response 200 
+
+
+
+
+
+# Data Structures
+
+## BuildRecordRequest (object)
+
+
+### Properties
++ `Solution` (string, required) 
++ `SolutionVersion` (string, required) 
++ `Product` (string, required) 
++ `ProductVersion` (string, required) 
++ `Component` (string, required) 
++ `ComponentVersion` (string, required) 
++ `BuildNumber` (string, required) 
++ `BuildMilestone` (string, required) 
++ `Branch` (string, required) 
++ `URL` (string, required) 
+
+
+## BuildStepRequest (object)
+
+
+### Properties
++ `BuildRecordId` (string, required) 
++ `StepName` (string, required) 
++ `StepResult` (string, required) 
+
+
+## VerDirResultsRequest (object)
+
+
+### Properties
++ `BuildRecordID` (string, required) 
++ `BuildNumber` (string, required) 
++ `FilesAnalyzed` (string, required) 
++ `FailureCount` (string, required) 
++ `Status` (string, required) 
++ `FailureList` (array[FailureList], required) 
+
+
+## FailureList (object)
+
+
+### Properties
++ `file` (string, required) 
++ `errors` (array[string], required) 
+
+
+## CoverityResultsRequest (object)
+
+
+### Properties
++ `BuildRecordID` (string, required) 
++ `FilesAnalyzed` (string, required) 
++ `TotalLOCAnalyzed` (string, required) 
++ `FunctionsAnalyzed` (string, required) 
++ `PathsAnalyzed` (string, required) 
++ `Duration` (string, required) 
++ `URL` (string, required) 
++ `NewDefectsFound` (string, required) 
++ `OutstandingDefects` (string, required) 
++ `DefectsList` (array[DefectsList], required) 
+
+
+## DefectsList (object)
+
+
+### Properties
++ `Cid` (string, required) 
++ `Severity` (string, required) 
++ `Classification` (string, required) 
++ `Impact` (string, required) 
++ `File` (string, required) 
++ `Category` (string, required) 
++ `Type` (string, required) 
+
+
+## ArtifactoryUrlRequest (object)
+
+
+### Properties
++ `BuildRecordID` (string, required) 
++ `ArtifactoryUrl` (string, required) 
+
+
+## BuildMilestoneRequest (object)
+
+
+### Properties
++ `BuildRecordID` (string, required) 
++ `BuildMilestone` (string, required) 
++ `Username` (string, required) 
++ `Comment` (string, required) 
+
+
+## BuildResultRequest (object)
+
+
+### Properties
++ `BuildRecordID` (string, required) 
++ `BuildResult` (string, required) 
++ `BuildComment` (string, required) 
+
+
+## TestRecordRequest (object)
+
+
+### Properties
++ `BuildRecordID` (string, required) 
++ `TestType` (string, required) 
++ `Platform` (string, required) 
++ `Architecture` (string, required) 
++ `URL` (string, required) 
++ `Suites` (array[Suite], required) 
+
+
+## Suite (object)
+
+
+### Properties
++ `TestSuiteName` (string, required) 
++ `TotalNumberOfTests` (string, required) 
+
+
+## TestCaseResultRequest (object)
+
+
+### Properties
++ `TestRecordID` (string, required) 
++ `TestSuiteName` (string, required) 
++ `TestCaseName` (string, required) 
++ `TestCaseResult` (string, required) 
+
+
+## TestRecordResultRequest (object)
+
+
+### Properties
++ `TestRecordID` (string, required) 
++ `TestResult` (string, required) 
+
+
+## QualityGatePostRequest (object)
+
+
+### Properties
++ `Name` (string, required) 
++ `Description` (string, required) 
++ `Type` (string, required) 
++ `Pass` (string, required) 
++ `Fail` (string, required) 
++ `Min` (string, required) 
++ `Max` (string, required) 
++ `Active` (string, required) 
+
+
+## QualityGateUpdateRequest (object)
+
+
+### Properties
++ `Name` (string, required) 
++ `Description` (string, required) 
++ `Type` (string, required) 
++ `Pass` (string, required) 
++ `Fail` (string, required) 
++ `Min` (string, required) 
++ `Max` (string, required) 
++ `Active` (string, required) 
+
+
+## GlobalyzerResultsRequest (object)
+
+
+### Properties
++ `Project` (string, required) 
++ `Language` (string, required) 
++ `Version` (string, required) 
++ `ConfigurationType` (string, required) 
++ `ReleaseNumber` (string, required) 
++ `ReleaseType` (string, required) 
++ `SVNBranch` (string, required) 
++ `BuildNumber` (string, required) 
++ `Date` (string, required) 
++ `GlobalyzerProjectName` (string, required) 
++ `GlobalyzerBasePath` (string, required) 
++ `Scans` (array[Scan], required) 
+
+
+## Scan (object)
+
+
+### Properties
++ `Name` (string, required) 
++ `RuleSetName` (string, required) 
++ `Language` (string, required) 
++ `LastScanDate` (string, required) 
++ `FileCount` (number, required) 
++ `LineCount` (number, required) 
++ `Results` (array[Result], required) 
+
+
+## Result (object)
+
+
+### Properties
++ `Type` (string, required) 
++ `Active` (number, required) 
++ `Ignore` (number, required) 
++ `Invalid` (number, required) 
++ `StickyIgnore` (number, required) 
++ `Resolved` (number, required) 
++ `Todo` (number, required) 
++ `Filtered` (number, required) 
+
+
+## CodeCoverageRequest (object)
+
+
+### Properties
++ `BuildRecordID` (string, required) 
++ `Coverage` (string, required) 
+
