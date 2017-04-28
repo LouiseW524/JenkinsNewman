@@ -43,7 +43,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /build/BuildRecord?buildRecordId=46
+          uri: /build/BuildRecord?buildRecordId=100
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -71,12 +71,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/BuildRecordRequest'
       - name: Content-Type
         in: header
         required: true
@@ -92,7 +86,6 @@ paths:
           uri: /build/BuildRecord
           headers:
             Content-Type: application/json
-          body: "{ \r\n  \"Solution\": \"Dynamic Endpoint\",\r\n  \"SolutionVersion\": \"1.0.0\",\r\n  \"Product\": \"ESP\",\r\n  \"ProductVersion\": \"11.0\",\r\n  \"Component\": \"ESP_UX\",\r\n  \"ComponentVersion\": \"11.0\",\r\n  \"BuildNumber\": \"102\",\r\n  \"BuildMilestone\": \"Queued\",\r\n  \"Branch\": \"trunk\",\r\n  \"URL\": \"http://build.orbit.intel.com/job/ESP/job/ESP_CHAIN/job/ESP_UX/100\"\r\n}"
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -143,7 +136,7 @@ paths:
           body: >-
             {
 
-              "BuildRecordId": "10",
+              "BuildRecordId": "99",
 
               "StepName": "Compilation",
 
@@ -1482,51 +1475,6 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 definitions:
-  BuildRecordRequest:
-    title: BuildRecordRequest
-    type: object
-    properties:
-      Solution:
-        description: ''
-        type: string
-      SolutionVersion:
-        description: ''
-        type: string
-      Product:
-        description: ''
-        type: string
-      ProductVersion:
-        description: ''
-        type: string
-      Component:
-        description: ''
-        type: string
-      ComponentVersion:
-        description: ''
-        type: string
-      BuildNumber:
-        description: ''
-        type: string
-      BuildMilestone:
-        description: ''
-        type: string
-      Branch:
-        description: ''
-        type: string
-      URL:
-        description: ''
-        type: string
-    required:
-    - Solution
-    - SolutionVersion
-    - Product
-    - ProductVersion
-    - Component
-    - ComponentVersion
-    - BuildNumber
-    - BuildMilestone
-    - Branch
-    - URL
   BuildStepRequest:
     title: BuildStepRequest
     type: object
