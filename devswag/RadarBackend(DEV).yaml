@@ -28,8 +28,7 @@ paths:
       - name: buildRecordId
         in: query
         required: true
-        type: integer
-        format: int32
+        type: string
         description: ''
       - name: Content-Type
         in: header
@@ -43,7 +42,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /build/BuildRecord?buildRecordId=100
+          uri: /build/BuildRecord?buildRecordId={{buildRecordIDGET}}
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -64,10 +63,10 @@ paths:
         IsMultiContentStreaming: false
     post:
       description: 'TODO: Add Description'
-      summary: BuildRecord
+      summary: BuildRecord copy
       tags:
       - RadarBackend(DevRadar)
-      operationId: BuildRecord
+      operationId: BuildRecord copy
       produces:
       - application/json
       parameters:
@@ -95,7 +94,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: BuildRecord
+        x-testName: BuildRecord copy
         x-testDescription: 'TODO: Add Description'
       x-operation-settings:
         CollectParameters: false
@@ -172,8 +171,7 @@ paths:
       - name: BuildRecordId
         in: query
         required: true
-        type: integer
-        format: int32
+        type: string
         description: ''
       - name: Content-Type
         in: header
@@ -187,7 +185,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /verdir/VerDirResults?BuildRecordId=43
+          uri: /verdir/VerDirResults?BuildRecordId={{verDirGET}}
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -215,12 +213,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/VerDirResultsRequest'
       - name: Content-Type
         in: header
         required: true
@@ -236,7 +228,6 @@ paths:
           uri: /verdir/VerDirResults
           headers:
             Content-Type: application/json
-          body: "{ \r\n  \"BuildRecordID\": \"43\",\r\n  \"BuildNumber\": \"101\",\r\n  \"FilesAnalyzed\": \"10\",\r\n  \"FailureCount\": \"5\",\r\n  \"Status\": \"Fail\",\r\n  \r\n  \"FailureList\": [\r\n    \r\n    {\"file\":\"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.dll\",\r\n    \"errors\": [ \"Signature checks excluded  (disabled by command line switch)\", \"File contains   unrecognised debug information type 13\" ]},\r\n    {\"file\":\"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\Win32\\\\EmBlEventViewStr.dll\",\r\n    \"errors\": [ \"Signature checks excluded  (disabled by command line switch)\", \"File contains unrecognised debug information type 13\" ]},\r\n    {\"file\":\"BUILD\\\\ESP\\\\PackagingEspSetup\\\\vcredist\\\\vc_redist2015.x86.exe\",\r\n    \"errors\": [ \"Company Name doesn't contain McAfee,  Intel Corporation, or Intel Security\", \"Signature checks excluded  (disabled by command line switch)\" ]},\r\n{\"file\":\"BUILD\\\\ESP\\\\BusinessObjects\\\\MaPkgSupplier\\\\SamplePkg\\\\build\\\\zip.exe\",\r\n    \"errors\": [ \"No version information\", \"ASLR compatibility flag isn't turned on\", \"DEP compatibility flag isn't turned on\" ]},\r\n    {\"file\":\"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\Win32\\\\BLSvcHost.exe\",\r\n    \"errors\": [ \"No version information\" ]}\r\n    ]\r\n}"
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -266,8 +257,7 @@ paths:
       - name: BuildRecordId
         in: query
         required: true
-        type: integer
-        format: int32
+        type: string
         description: ''
       - name: Content-Type
         in: header
@@ -281,7 +271,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /coverity/CoverityResults?BuildRecordId=43
+          uri: /coverity/CoverityResults?BuildRecordId={{coverityGET}}
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -309,12 +299,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/CoverityResultsRequest'
       - name: Content-Type
         in: header
         required: true
@@ -330,7 +314,6 @@ paths:
           uri: /coverity/CoverityResults
           headers:
             Content-Type: application/json
-          body: "{ \r\n  \"BuildRecordID\": \"43\",\r\n  \"FilesAnalyzed\": \"3\",\r\n  \"TotalLOCAnalyzed\": \"3143\",\r\n  \"FunctionsAnalyzed\": \"211\",\r\n  \"PathsAnalyzed\": \"23\",\r\n  \"Duration\": \"00:00:12\",\r\n  \"URL\": \"http://beaappcov1.corp.nai.org\",\r\n  \"NewDefectsFound\": \"3\",\r\n  \"OutstandingDefects\": \"9\",\r\n  \r\n  \"DefectsList\": [\r\n    \r\n    {\r\n      \"Cid\": \"120435\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.cpp\",\r\n      \"Category\": \"BUFFER_OVERFLOW\",\r\n      \"Type\": \"Buffer overflow\"\r\n    },\r\n     \r\n    {\r\n      \"Cid\": \"120436\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.cpp\",\r\n      \"Category\": \"FORWARD_NULL\",\r\n      \"Type\": \"Deferencing Null Pointer pi\"\r\n    },\r\n    \r\n    {\r\n      \"Cid\": \"120437\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\foo.cpp\",\r\n      \"Category\": \"FORWARD_NULL\",\r\n      \"Type\": \"Deferencing Null Pointer pi\"\r\n    }\r\n\r\n    ]\r\n}"
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -357,12 +340,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/ArtifactoryUrlRequest'
       - name: Content-Type
         in: header
         required: true
@@ -378,14 +355,6 @@ paths:
           uri: /build/ArtifactoryUrl
           headers:
             Content-Type: application/json
-          body: >-
-            {
-
-              "BuildRecordID": "43",
-
-              "ArtifactoryUrl": "http://artifactoryurl/build43"
-
-            }
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -452,12 +421,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/BuildMilestoneRequest'
       - name: Content-Type
         in: header
         required: true
@@ -473,18 +436,6 @@ paths:
           uri: /build/BuildMilestone
           headers:
             Content-Type: application/json
-          body: >-
-            {
-
-              "BuildRecordID": "112",
-
-              "BuildMilestone": "Released to QA",
-
-              "Username": "jcollin1",
-
-              "Comment": "Test comment"
-
-            }
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -514,8 +465,7 @@ paths:
       - name: BuildRecordId
         in: query
         required: true
-        type: integer
-        format: int32
+        type: string
         description: ''
       - name: Content-Type
         in: header
@@ -529,7 +479,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /build/BuildMilestoneHistory?BuildRecordId=1
+          uri: /build/BuildMilestoneHistory?BuildRecordId={{historyGet}}
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -561,8 +511,7 @@ paths:
       - name: BuildRecordId
         in: query
         required: true
-        type: integer
-        format: int32
+        type: string
         description: ''
       - name: Content-Type
         in: header
@@ -576,7 +525,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /build/BuildMilestoneProgressions?BuildRecordId=108
+          uri: /build/BuildMilestoneProgressions?BuildRecordId={{progressionGET}}
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -605,12 +554,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/BuildResultRequest'
       - name: Content-Type
         in: header
         required: true
@@ -626,7 +569,6 @@ paths:
           uri: /build/BuildResult
           headers:
             Content-Type: application/json
-          body: "{ \r\n  \"BuildRecordID\": \"43\",\r\n  \"BuildResult\": \"Passed\",\r\n  \"BuildComment\": \"No Quality Gate Violations.\"\r\n}"
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -682,14 +624,12 @@ paths:
       - name: componentVersion
         in: query
         required: true
-        type: number
-        format: double
+        type: string
         description: ''
       - name: buildNumber
         in: query
         required: true
-        type: integer
-        format: int32
+        type: string
         description: ''
       - name: branch
         in: query
@@ -708,7 +648,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /build/HighLevelBuildReport?solutionName=Dynamic Endpoint&solutionVersion=1.0.0&productName=ESP&productVersion=11.0&componentName=ESP_UX&componentVersion=11.0&buildNumber=780&branch=trunk
+          uri: /build/HighLevelBuildReport?solutionName=Engineering Services Tools&solutionVersion=1.0.0&productName=Radar&productVersion=1.0&componentName=Radar_API_Tester&componentVersion=1.0.0&buildNumber={{highLevelBuildReportGET}}&branch=trunk
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -766,8 +706,7 @@ paths:
       - name: componentVersion
         in: query
         required: true
-        type: number
-        format: double
+        type: string
         description: ''
       - name: milestone
         in: query
@@ -791,7 +730,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /build/BuildSearch?solutionName=Dynamic Endpoint&solutionVersion=1.0.0&productName=ESP&productVersion=11.0&componentName=ESP_INSTALLER&componentVersion=11.0&milestone=Released to qa&useExactMilestone=false
+          uri: /build/BuildSearch?solutionName=Engineering Services Tools&solutionVersion=1.0.0&productName=Radar&productVersion=1.0&componentName=Radar_API_Tester&componentVersion=1.0.0&milestone=Build Passed&useExactMilestone=false
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -820,12 +759,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/TestRecordRequest'
       - name: Content-Type
         in: header
         required: true
@@ -841,7 +774,6 @@ paths:
           uri: /Test/TestRecord
           headers:
             Content-Type: application/json
-          body: "{\r\n	\"BuildRecordID\": \"110\",\r\n	\"TestType\": \"BVT\",\r\n    \"Platform\": \"Windows\",\r\n    \"Architecture\": \"x86\",\r\n	\"URL\": \"http://your.test.rig/results/build/100/bvt\",\r\n\r\n	\"Suites\": [\r\n\r\n		{\r\n			\"TestSuiteName\": \"GTI\",\r\n			\"TotalNumberOfTests\": \"100\"\r\n		}, \r\n        {\r\n			\"TestSuiteName\": \"Logger\",\r\n			\"TotalNumberOfTests\": \"14\"\r\n		}\r\n\r\n	]\r\n}"
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -868,12 +800,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/TestCaseResultRequest'
       - name: Content-Type
         in: header
         required: true
@@ -889,18 +815,6 @@ paths:
           uri: /Test/TestCaseResult
           headers:
             Content-Type: application/json
-          body: >-
-            {
-
-            	"TestRecordID": "7",
-
-            	"TestSuiteName": "GTI",
-
-            	"TestCaseName": "Test good file",
-
-                "TestCaseResult": "Pass"
-
-            }
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -927,12 +841,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/TestRecordResultRequest'
       - name: Content-Type
         in: header
         required: true
@@ -948,14 +856,6 @@ paths:
           uri: /test/TestRecordResult
           headers:
             Content-Type: application/json
-          body: >-
-            {
-
-              "TestRecordID": "28",
-
-              "TestResult": "Failed"
-
-            }
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -985,8 +885,7 @@ paths:
       - name: BuildRecordId
         in: query
         required: true
-        type: integer
-        format: int32
+        type: string
         description: ''
       - name: Content-Type
         in: header
@@ -1000,7 +899,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /Test/TestResults?BuildRecordId=43
+          uri: /Test/TestResults?BuildRecordId= {{testResultsGET}}
           headers:
             Content-Type: application/json
         expectedResponse:
@@ -1029,12 +928,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/Qualitygate(post)request'
       - name: Content-Type
         in: header
         required: true
@@ -1050,7 +943,6 @@ paths:
           uri: /Quality/QualityGate
           headers:
             Content-Type: application/json
-          body: "{ \r\n  \"Name\": \"Jimmy\",\r\n  \"Description\": \"# of defects found\",\r\n  \"Type\": \"count\",\r\n  \"Pass\": \"0\",\r\n  \"Fail\": \"15\",\r\n  \"Min\": \"0\",\r\n  \"Max\": \"100\",\r\n  \"Active\": \"1\"\r\n}"
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -1077,12 +969,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/QualityGateUpdateRequest'
       - name: Content-Type
         in: header
         required: true
@@ -1098,7 +984,6 @@ paths:
           uri: /Quality/QualityGateUpdate
           headers:
             Content-Type: application/json
-          body: "{ \r\n  \"Name\": \"VerDir\",\r\n  \"Description\": \"# of defects found\",\r\n  \"Type\": \"count\",\r\n  \"Pass\": \"0\",\r\n  \"Fail\": \"10\",\r\n  \"Min\": \"0\",\r\n  \"Max\": \"100\",\r\n  \"Active\": \"1\"\r\n}"
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -1156,324 +1041,6 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /globalyzer/GlobalyzerResults:
-    post:
-      description: 'TODO: Add Description'
-      summary: GlobalyzerResults
-      tags:
-      - RadarBackend(DevRadar)
-      operationId: GlobalyzerResults
-      produces:
-      - application/json
-      parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/GlobalyzerResultsRequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
-      responses:
-        200:
-          description: ''
-      security: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /globalyzer/GlobalyzerResults
-          headers:
-            Content-Type: application/json
-          body: >-
-            {
-
-                "Project":"Project 1",
-
-                "Language":"English",
-
-                "Version":"10.0.0",
-
-                "ConfigurationType":"Release",
-
-                "ReleaseNumber":"123",
-
-                "ReleaseType":"Main",
-
-                "SVNBranch":"/trunk/main",
-
-                "BuildNumber":"354",
-
-                "Date":"12/07/16 12:0:0",
-
-                "GlobalyzerProjectName":"Test Proj 1",
-
-                "GlobalyzerBasePath":"C:/Projects/L10N/Test/Globalyzer/Results",
-
-                "Scans":[
-
-                    {
-
-                        "Name":"JavaScript",
-
-                        "RuleSetName":"Test projects JavaScript rules",
-
-                        "Language":"JavaScript",
-
-                        "LastScanDate":"12/06/16",
-
-                        "FileCount":963,
-
-                        "LineCount":27362,
-
-                        "Results":[
-
-                            {
-
-                                "Type":"Embedded Strings",
-
-                                "Active":1973,
-
-                                "Ignore":200,
-
-                                "Invalid":195,
-
-                                "StickyIgnore":0,
-
-                                "Resolved":0,
-
-                                "Todo":0,
-
-                                "Filtered":1290
-
-                            },
-
-                            {
-
-                                "Type":"Locale sensitive methods",
-
-                                "Active":50,
-
-                                "Ignore":20,
-
-                                "Invalid":10,
-
-                                "StickyIgnore":10,
-
-                                "Resolved":50,
-
-                                "Todo":0,
-
-                                "Filtered":122
-
-                            }
-
-                        ]
-
-                    },
-
-                    {
-
-                        "Name":"CPlusPlus",
-
-                        "RuleSetName":"Test projects C++ rules",
-
-                        "Language":"C++",
-
-                        "LastScanDate":"12/7/16",
-
-                        "FileCount":1000,
-
-                        "LineCount":100000,
-
-                        "Results":[
-
-                            {
-
-                                "Type":"Embedded Strings",
-
-                                "Active":500,
-
-                                "Ignore":2,
-
-                                "Invalid":0,
-
-                                "StickyIgnore":0,
-
-                                "Resolved":600,
-
-                                "Todo":0,
-
-                                "Filtered":12
-
-                            },
-
-                            {
-
-                                "Type":"Locale sensitive methods",
-
-                                "Active":1234,
-
-                                "Ignore":20,
-
-                                "Invalid":10,
-
-                                "StickyIgnore":10,
-
-                                "Resolved":50,
-
-                                "Todo":0,
-
-                                "Filtered":122
-
-                            }
-
-                        ]
-
-                    }
-
-                ]
-
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: GlobalyzerResults
-        x-testDescription: 'TODO: Add Description'
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /build/CodeCoverage:
-    post:
-      description: 'TODO: Add Description'
-      summary: CodeCoverage
-      tags:
-      - RadarBackend(DevRadar)
-      operationId: CodeCoverage
-      produces:
-      - application/json
-      parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/CodeCoverageRequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
-      responses:
-        200:
-          description: ''
-      security: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /build/CodeCoverage
-          headers:
-            Content-Type: application/json
-          body: "{ \r\n  \"BuildRecordID\": \"20\",\r\n  \"Coverage\": \"77%\"\r\n}"
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: CodeCoverage
-        x-testDescription: 'TODO: Add Description'
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /build/HighLevelBuildReportsForComponent:
-    get:
-      description: 'TODO: Add Description'
-      summary: HighLevelBuildReportsForComponent
-      tags:
-      - RadarBackend(DevRadar)
-      operationId: HighLevelBuildReportsForComponent
-      produces:
-      - application/json
-      parameters:
-      - name: solutionName
-        in: query
-        required: true
-        type: string
-        description: ''
-      - name: solutionVersion
-        in: query
-        required: true
-        type: string
-        description: ''
-      - name: productName
-        in: query
-        required: true
-        type: string
-        description: ''
-      - name: productVersion
-        in: query
-        required: true
-        type: number
-        format: double
-        description: ''
-      - name: componentName
-        in: query
-        required: true
-        type: string
-        description: ''
-      - name: componentVersion
-        in: query
-        required: true
-        type: number
-        format: double
-        description: ''
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: ''
-      responses:
-        200:
-          description: ''
-      security: []
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /build/HighLevelBuildReportsForComponent?solutionName=Dynamic Endpoint&solutionVersion=3.0.0&productName=ESP&productVersion=11.0&componentName=ESP&componentVersion=11.0
-          headers:
-            Content-Type: application/json
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: HighLevelBuildReportsForComponent
-        x-testDescription: 'TODO: Add Description'
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
 definitions:
   BuildStepRequest:
     title: BuildStepRequest
@@ -1492,481 +1059,3 @@ definitions:
     - BuildRecordId
     - StepName
     - StepResult
-  VerDirResultsRequest:
-    title: VerDirResultsRequest
-    type: object
-    properties:
-      BuildRecordID:
-        description: ''
-        type: string
-      BuildNumber:
-        description: ''
-        type: string
-      FilesAnalyzed:
-        description: ''
-        type: string
-      FailureCount:
-        description: ''
-        type: string
-      Status:
-        description: ''
-        type: string
-      FailureList:
-        description: ''
-        type: array
-        items:
-          $ref: '#/definitions/FailureList'
-    required:
-    - BuildRecordID
-    - BuildNumber
-    - FilesAnalyzed
-    - FailureCount
-    - Status
-    - FailureList
-  FailureList:
-    title: FailureList
-    type: object
-    properties:
-      file:
-        description: ''
-        type: string
-      errors:
-        description: ''
-        type: array
-        items:
-          type: string
-    required:
-    - file
-    - errors
-  CoverityResultsRequest:
-    title: CoverityResultsRequest
-    type: object
-    properties:
-      BuildRecordID:
-        description: ''
-        type: string
-      FilesAnalyzed:
-        description: ''
-        type: string
-      TotalLOCAnalyzed:
-        description: ''
-        type: string
-      FunctionsAnalyzed:
-        description: ''
-        type: string
-      PathsAnalyzed:
-        description: ''
-        type: string
-      Duration:
-        description: ''
-        type: string
-      URL:
-        description: ''
-        type: string
-      NewDefectsFound:
-        description: ''
-        type: string
-      OutstandingDefects:
-        description: ''
-        type: string
-      DefectsList:
-        description: ''
-        type: array
-        items:
-          $ref: '#/definitions/DefectsList'
-    required:
-    - BuildRecordID
-    - FilesAnalyzed
-    - TotalLOCAnalyzed
-    - FunctionsAnalyzed
-    - PathsAnalyzed
-    - Duration
-    - URL
-    - NewDefectsFound
-    - OutstandingDefects
-    - DefectsList
-  DefectsList:
-    title: DefectsList
-    type: object
-    properties:
-      Cid:
-        description: ''
-        type: string
-      Severity:
-        description: ''
-        type: string
-      Classification:
-        description: ''
-        type: string
-      Impact:
-        description: ''
-        type: string
-      File:
-        description: ''
-        type: string
-      Category:
-        description: ''
-        type: string
-      Type:
-        description: ''
-        type: string
-    required:
-    - Cid
-    - Severity
-    - Classification
-    - Impact
-    - File
-    - Category
-    - Type
-  ArtifactoryUrlRequest:
-    title: ArtifactoryUrlRequest
-    type: object
-    properties:
-      BuildRecordID:
-        description: ''
-        type: string
-      ArtifactoryUrl:
-        description: ''
-        type: string
-    required:
-    - BuildRecordID
-    - ArtifactoryUrl
-  BuildMilestoneRequest:
-    title: BuildMilestoneRequest
-    type: object
-    properties:
-      BuildRecordID:
-        description: ''
-        type: string
-      BuildMilestone:
-        description: ''
-        type: string
-      Username:
-        description: ''
-        type: string
-      Comment:
-        description: ''
-        type: string
-    required:
-    - BuildRecordID
-    - BuildMilestone
-    - Username
-    - Comment
-  BuildResultRequest:
-    title: BuildResultRequest
-    type: object
-    properties:
-      BuildRecordID:
-        description: ''
-        type: string
-      BuildResult:
-        description: ''
-        type: string
-      BuildComment:
-        description: ''
-        type: string
-    required:
-    - BuildRecordID
-    - BuildResult
-    - BuildComment
-  TestRecordRequest:
-    title: TestRecordRequest
-    type: object
-    properties:
-      BuildRecordID:
-        description: ''
-        type: string
-      TestType:
-        description: ''
-        type: string
-      Platform:
-        description: ''
-        type: string
-      Architecture:
-        description: ''
-        type: string
-      URL:
-        description: ''
-        type: string
-      Suites:
-        description: ''
-        type: array
-        items:
-          $ref: '#/definitions/Suite'
-    required:
-    - BuildRecordID
-    - TestType
-    - Platform
-    - Architecture
-    - URL
-    - Suites
-  Suite:
-    title: Suite
-    type: object
-    properties:
-      TestSuiteName:
-        description: ''
-        type: string
-      TotalNumberOfTests:
-        description: ''
-        type: string
-    required:
-    - TestSuiteName
-    - TotalNumberOfTests
-  TestCaseResultRequest:
-    title: TestCaseResultRequest
-    type: object
-    properties:
-      TestRecordID:
-        description: ''
-        type: string
-      TestSuiteName:
-        description: ''
-        type: string
-      TestCaseName:
-        description: ''
-        type: string
-      TestCaseResult:
-        description: ''
-        type: string
-    required:
-    - TestRecordID
-    - TestSuiteName
-    - TestCaseName
-    - TestCaseResult
-  TestRecordResultRequest:
-    title: TestRecordResultRequest
-    type: object
-    properties:
-      TestRecordID:
-        description: ''
-        type: string
-      TestResult:
-        description: ''
-        type: string
-    required:
-    - TestRecordID
-    - TestResult
-  Qualitygate(post)request:
-    title: QualityGate(Post)Request
-    type: object
-    properties:
-      Name:
-        description: ''
-        type: string
-      Description:
-        description: ''
-        type: string
-      Type:
-        description: ''
-        type: string
-      Pass:
-        description: ''
-        type: string
-      Fail:
-        description: ''
-        type: string
-      Min:
-        description: ''
-        type: string
-      Max:
-        description: ''
-        type: string
-      Active:
-        description: ''
-        type: string
-    required:
-    - Name
-    - Description
-    - Type
-    - Pass
-    - Fail
-    - Min
-    - Max
-    - Active
-  QualityGateUpdateRequest:
-    title: QualityGateUpdateRequest
-    type: object
-    properties:
-      Name:
-        description: ''
-        type: string
-      Description:
-        description: ''
-        type: string
-      Type:
-        description: ''
-        type: string
-      Pass:
-        description: ''
-        type: string
-      Fail:
-        description: ''
-        type: string
-      Min:
-        description: ''
-        type: string
-      Max:
-        description: ''
-        type: string
-      Active:
-        description: ''
-        type: string
-    required:
-    - Name
-    - Description
-    - Type
-    - Pass
-    - Fail
-    - Min
-    - Max
-    - Active
-  GlobalyzerResultsRequest:
-    title: GlobalyzerResultsRequest
-    type: object
-    properties:
-      Project:
-        description: ''
-        type: string
-      Language:
-        description: ''
-        type: string
-      Version:
-        description: ''
-        type: string
-      ConfigurationType:
-        description: ''
-        type: string
-      ReleaseNumber:
-        description: ''
-        type: string
-      ReleaseType:
-        description: ''
-        type: string
-      SVNBranch:
-        description: ''
-        type: string
-      BuildNumber:
-        description: ''
-        type: string
-      Date:
-        description: ''
-        type: string
-      GlobalyzerProjectName:
-        description: ''
-        type: string
-      GlobalyzerBasePath:
-        description: ''
-        type: string
-      Scans:
-        description: ''
-        type: array
-        items:
-          $ref: '#/definitions/Scan'
-    required:
-    - Project
-    - Language
-    - Version
-    - ConfigurationType
-    - ReleaseNumber
-    - ReleaseType
-    - SVNBranch
-    - BuildNumber
-    - Date
-    - GlobalyzerProjectName
-    - GlobalyzerBasePath
-    - Scans
-  Scan:
-    title: Scan
-    type: object
-    properties:
-      Name:
-        description: ''
-        type: string
-      RuleSetName:
-        description: ''
-        type: string
-      Language:
-        description: ''
-        type: string
-      LastScanDate:
-        description: ''
-        type: string
-      FileCount:
-        description: ''
-        type: integer
-        format: int32
-      LineCount:
-        description: ''
-        type: integer
-        format: int32
-      Results:
-        description: ''
-        type: array
-        items:
-          $ref: '#/definitions/Result'
-    required:
-    - Name
-    - RuleSetName
-    - Language
-    - LastScanDate
-    - FileCount
-    - LineCount
-    - Results
-  Result:
-    title: Result
-    type: object
-    properties:
-      Type:
-        description: ''
-        type: string
-      Active:
-        description: ''
-        type: integer
-        format: int32
-      Ignore:
-        description: ''
-        type: integer
-        format: int32
-      Invalid:
-        description: ''
-        type: integer
-        format: int32
-      StickyIgnore:
-        description: ''
-        type: integer
-        format: int32
-      Resolved:
-        description: ''
-        type: integer
-        format: int32
-      Todo:
-        description: ''
-        type: integer
-        format: int32
-      Filtered:
-        description: ''
-        type: integer
-        format: int32
-    required:
-    - Type
-    - Active
-    - Ignore
-    - Invalid
-    - StickyIgnore
-    - Resolved
-    - Todo
-    - Filtered
-  CodeCoverageRequest:
-    title: CodeCoverageRequest
-    type: object
-    properties:
-      BuildRecordID:
-        description: ''
-        type: string
-      Coverage:
-        description: ''
-        type: string
-    required:
-    - BuildRecordID
-    - Coverage
