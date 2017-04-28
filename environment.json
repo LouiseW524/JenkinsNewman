@@ -1,22 +1,250 @@
 {
   "id": "20e0362d-4586-24f9-7048-673771839b43",
-  "name": "RadarCollectionExample",
+  "name": "Radar_Backend_Environment",
   "values": [
     {
       "enabled": true,
-      "key": "URL",
-      "value": "http://localhost:2345/api/build",
+      "key": "myBuildNumber",
+      "value": "110",
       "type": "text"
     },
     {
       "enabled": true,
-      "key": "build",
-      "value": "http://build.orbit.intel.com/job/ESP/job/ESP_CHAIN/job/ESP_UX",
+      "key": "buildNum",
+      "value": "110",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myBuildRecordId",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "buildRecordNum",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myVerDirBuildID",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "verDirNum",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myCoverityBuildID",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "coverityNum",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myArtifactoryBuildID",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "artifactoryNum",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myBuildMilestoneID",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "milestoneNum",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myBuildResultNum",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "resultNum",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myTestRecordBuildID",
+      "value": "106",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "testNum",
+      "value": "106",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myTestRecordID",
+      "value": "25",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "testRecordNum",
+      "value": "25",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myTestRecordIDResult",
+      "value": "26",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "testRecordResultNum",
+      "value": "26",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myQualityGateName",
+      "value": "6",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "qualityGateNum",
+      "value": "6",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "myQualityGateUpdate",
+      "value": "5",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "updateGateNum",
+      "value": "5",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "buildRecordIDGET",
+      "value": "106",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "buildGETnum",
+      "value": "106",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "verDirGET",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "verDirGETNum",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "coverityGET",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "coverityGETNum",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "historyGet",
+      "value": "103",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "historyGETNum",
+      "value": "103",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "progressionGET",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "progressionGETNum",
+      "value": "104",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "highLevelGet",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "highLevelGetNum",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "testResultsGET",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "testResultsGETNum",
+      "value": "105",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "highLevelBuildReportGET",
+      "value": "103",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "highlevelReportNum",
+      "value": "103",
       "type": "text"
     }
   ],
-  "timestamp": 1491479429141,
+  "timestamp": 1493368596146,
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2017-04-07T11:39:48.017Z",
-  "_postman_exported_using": "Postman/4.10.5"
+  "_postman_exported_at": "2017-04-28T08:38:21.981Z",
+  "_postman_exported_using": "Postman/4.10.7"
 }
