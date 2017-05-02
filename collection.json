@@ -32,7 +32,8 @@
 				"4911c2d6-970b-fe7c-684d-381840a0aaa2",
 				"68f39abb-1f5e-782b-3dc2-844d9d5a2579",
 				"25f92c4a-ee18-59cb-233d-8789f4146ea1",
-				"4a67ef6a-06ea-2de0-faee-f17e252bbde3"
+				"4a67ef6a-06ea-2de0-faee-f17e252bbde3",
+				"ab567189-3428-9b19-1dba-12cfeb2ddb7c"
 			],
 			"owner": "1802157",
 			"collectionId": "f7720337-6f59-659f-1222-e20611e480bd"
@@ -395,6 +396,27 @@
 			"collectionId": "f7720337-6f59-659f-1222-e20611e480bd",
 			"responses": [],
 			"rawModeData": "{ \r\n  \"BuildRecordID\":{{myCoverityBuildID}},\r\n  \"FilesAnalyzed\": \"3\",\r\n  \"TotalLOCAnalyzed\": \"3143\",\r\n  \"FunctionsAnalyzed\": \"211\",\r\n  \"PathsAnalyzed\": \"23\",\r\n  \"Duration\": \"00:00:12\",\r\n  \"URL\": \"http://beaappcov1.corp.nai.org\",\r\n  \"NewDefectsFound\": \"3\",\r\n  \"OutstandingDefects\": \"9\",\r\n  \r\n  \"DefectsList\": [\r\n    \r\n    {\r\n      \"Cid\": \"120435\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.cpp\",\r\n      \"Category\": \"BUFFER_OVERFLOW\",\r\n      \"Type\": \"Buffer overflow\"\r\n    },\r\n     \r\n    {\r\n      \"Cid\": \"120436\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\EmBlEventViewStr.cpp\",\r\n      \"Category\": \"FORWARD_NULL\",\r\n      \"Type\": \"Deferencing Null Pointer pi\"\r\n    },\r\n    \r\n    {\r\n      \"Cid\": \"120437\",\r\n      \"Severity\": \"unspecified\",\r\n      \"Classification\": \"unclassified\",\r\n      \"Impact\": \"undecided\",\r\n      \"File\": \"BUILD\\\\ESP\\\\BuildResults\\\\Release\\\\x64\\\\foo.cpp\",\r\n      \"Category\": \"FORWARD_NULL\",\r\n      \"Type\": \"Deferencing Null Pointer pi\"\r\n    }\r\n\r\n    ]\r\n}"
+		},
+		{
+			"id": "ab567189-3428-9b19-1dba-12cfeb2ddb7c",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://devradar.orbit.intel.com:8080/v1/api/build/BuildRecord",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Unique Build Number\"] =! responseBody.has(\"A record already seems to exist \");\n\ntests[\"Build Record Returned\"] = responseBody.has(\"BuildRecordID\");\n\nnum = environment.buildNum++;\npostman.setEnvironmentVariable(\"myBuildNumber\", environment.buildNum );\npostman.setEnvironmentVariable(\"buildNum\", num + 1);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1493300002335,
+			"name": "BuildRecord copy",
+			"description": "Purpose: Add data to the BuildRecords table. This is the high level record for a particular build. This would be called as the build is initiated.\r\n\r\nReturns\r\n\r\n•\tHTTP 200 with JSON that lists the new ID of this record in the Radar system. This is the unique ‘BuildRecordID’ parameter that will need to be passed with all subsequent API calls, e.g.\r\n{\"BuildRecordID\":\"1\"}\r\n\r\nError Codes\r\n\r\n•\tHTTP 400 – Data passed was invalid. A descriptive JSON is returned outlining the issue, e.g.\r\n{\"Error\":\"Expected a non-null integer for property: 'BuildNumber'\"}\r\n\r\n•\tHTTP 500 – An error occurred on the server, in this instance the message from the stack track is passed back in a JSON response similar to above.\r\n\r\n\r\nNotes\r\n\r\n•\tThe following are validated as against what is in the database: Solution, SolutionVersion, Product, ProductVersion, Component, ComponentVersion. If these are not valid the server will return a HTTP 400 and a descriptive JSON error message, e.g.\r\n{\"Error\":\"Product Name specified does not exist in the database.\"}\r\n\r\n•\tError emails are available also.\r\n\r\n•\tEach BuildRecord is timestamped as it is added to the\r\ndatabase (using the current server time).\r\n\r\n•\tValues for BuildMilestone are pre-defined in a BuildMilestones table in the database. Passing an invalid value for build milestone will result in an error response similar to above.\r\n\r\n•\tYou cannot submit data for the same build number twice. E.g. if there are results for build 100 already, you will receive an error message.\r\n\r\n",
+			"collectionId": "f7720337-6f59-659f-1222-e20611e480bd",
+			"responses": [],
+			"folder": "73acf0f0-4669-e430-86a9-45d91854a6e9",
+			"rawModeData": "{ \r\n  \"Solution\": \"Engineering Services Tools\",\r\n  \"SolutionVersion\": \"1.0.0\",\r\n  \"Product\": \"Radar\",\r\n  \"ProductVersion\": \"1.0\",\r\n  \"Component\": \"Radar_API_Tester\",\r\n  \"ComponentVersion\": \"1.0.0\",\r\n  \"BuildNumber\": {{myBuildNumber}},\r\n  \"BuildMilestone\": \"Queued\",\r\n  \"Branch\": \"trunk\",\r\n  \"URL\": \"http://build.orbit.intel.com/job/ESP/job/ESP_CHAIN/job/ESP_UX/100\"\r\n}"
 		},
 		{
 			"id": "b79465cf-2c26-c3a3-46a2-977dae769924",
