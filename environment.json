@@ -5,13 +5,13 @@
     {
       "enabled": true,
       "key": "myBuildNumber",
-      "value": "124",
+      "value": "125",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "buildNum",
-      "value": "124",
+      "value": "125",
       "type": "text"
     },
     {
