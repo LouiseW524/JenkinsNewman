@@ -63,10 +63,10 @@ paths:
         IsMultiContentStreaming: false
     post:
       description: 'TODO: Add Description'
-      summary: BuildRecord copy
+      summary: BuildRecord
       tags:
       - RadarBackend(DevRadar)
-      operationId: BuildRecord copy
+      operationId: BuildRecord
       produces:
       - application/json
       parameters:
@@ -94,7 +94,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: BuildRecord copy
+        x-testName: BuildRecord
         x-testDescription: 'TODO: Add Description'
       x-operation-settings:
         CollectParameters: false
