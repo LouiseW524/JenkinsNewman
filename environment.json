@@ -29,25 +29,25 @@
     {
       "enabled": true,
       "key": "myVerDirBuildID",
-      "value": "113",
+      "value": "119",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "verDirNum",
-      "value": "113",
+      "value": "119",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myCoverityBuildID",
-      "value": "113",
+      "value": "118",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "coverityNum",
-      "value": "113",
+      "value": "118",
       "type": "text"
     },
     {
@@ -101,13 +101,13 @@
     {
       "enabled": true,
       "key": "myTestRecordID",
-      "value": "24",
+      "value": "25",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "testRecordNum",
-      "value": "24",
+      "value": "25",
       "type": "text"
     },
     {
@@ -243,8 +243,8 @@
       "type": "text"
     }
   ],
-  "timestamp": 1493906683247,
+  "timestamp": 1493908672533,
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2017-05-04T14:05:28.376Z",
+  "_postman_exported_at": "2017-05-04T14:38:18.054Z",
   "_postman_exported_using": "Postman/4.10.7"
 }
