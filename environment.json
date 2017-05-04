@@ -5,246 +5,246 @@
     {
       "enabled": true,
       "key": "myBuildNumber",
-      "value": "133",
+      "value": "140",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "buildNum",
-      "value": "133",
+      "value": "140",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myBuildRecordId",
-      "value": "111",
+      "value": "118",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "buildRecordNum",
-      "value": "111",
+      "value": "118",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myVerDirBuildID",
-      "value": "122",
+      "value": "131",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "verDirNum",
-      "value": "122",
+      "value": "131",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myCoverityBuildID",
-      "value": "119",
+      "value": "130",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "coverityNum",
-      "value": "119",
+      "value": "130",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myArtifactoryBuildID",
-      "value": "110",
+      "value": "117",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "artifactoryNum",
-      "value": "110",
+      "value": "117",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myBuildMilestoneID",
-      "value": "111",
+      "value": "118",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "milestoneNum",
-      "value": "111",
+      "value": "118",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myBuildResultNum",
-      "value": "111",
+      "value": "118",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "resultNum",
-      "value": "111",
+      "value": "118",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myTestRecordBuildID",
-      "value": "112",
+      "value": "119",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "testNum",
-      "value": "112",
+      "value": "119",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myTestRecordID",
-      "value": "26",
+      "value": "33",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "testRecordNum",
-      "value": "26",
+      "value": "33",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myTestRecordIDResult",
-      "value": "27",
+      "value": "34",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "testRecordResultNum",
-      "value": "27",
+      "value": "34",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myQualityGateName",
-      "value": "17",
+      "value": "24",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "qualityGateNum",
-      "value": "17",
+      "value": "124",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myQualityGateUpdate",
-      "value": "11",
+      "value": "18",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "updateGateNum",
-      "value": "11",
+      "value": "18",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "buildRecordIDGET",
-      "value": "112",
+      "value": "119",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "buildGETnum",
-      "value": "112",
+      "value": "119",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "verDirGET",
-      "value": "110",
+      "value": "117",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "verDirGETNum",
-      "value": "110",
+      "value": "117",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "coverityGET",
-      "value": "109",
+      "value": "116",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "coverityGETNum",
-      "value": "109",
+      "value": "116",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "historyGet",
-      "value": "108",
+      "value": "115",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "historyGETNum",
-      "value": "108",
+      "value": "115",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "progressionGET",
-      "value": "109",
+      "value": "116",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "progressionGETNum",
-      "value": "109",
+      "value": "116",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "highLevelGet",
-      "value": "110",
+      "value": "117",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "highLevelGetNum",
-      "value": "110",
+      "value": "117",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "testResultsGET",
-      "value": "110",
+      "value": "117",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "testResultsGETNum",
-      "value": "110",
+      "value": "117",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "highLevelBuildReportGET",
-      "value": "108",
+      "value": "115",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "highlevelReportNum",
-      "value": "108",
+      "value": "115",
       "type": "text"
     }
   ],
-  "timestamp": 1493909072915,
+  "timestamp": 1493910266550,
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2017-05-04T14:44:45.598Z",
+  "_postman_exported_at": "2017-05-04T15:04:28.244Z",
   "_postman_exported_using": "Postman/4.10.7"
 }
