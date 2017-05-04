@@ -5,25 +5,25 @@
     {
       "enabled": true,
       "key": "myBuildNumber",
-      "value": "125",
+      "value": "129",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "buildNum",
-      "value": "125",
+      "value": "129",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myBuildRecordId",
-      "value": "109",
+      "value": "110",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "buildRecordNum",
-      "value": "109",
+      "value": "110",
       "type": "text"
     },
     {
@@ -113,13 +113,13 @@
     {
       "enabled": true,
       "key": "myTestRecordIDResult",
-      "value": "24",
+      "value": "26",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "testRecordResultNum",
-      "value": "24",
+      "value": "26",
       "type": "text"
     },
     {
@@ -243,8 +243,8 @@
       "type": "text"
     }
   ],
-  "timestamp": 1493807230528,
+  "timestamp": 1493906683247,
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2017-05-04T08:09:09.720Z",
+  "_postman_exported_at": "2017-05-04T14:05:28.376Z",
   "_postman_exported_using": "Postman/4.10.7"
 }
