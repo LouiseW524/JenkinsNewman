@@ -111,12 +111,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
-        in: body
-        required: true
-        description: ''
-        schema:
-          $ref: '#/definitions/BuildStepRequest'
       - name: Content-Type
         in: header
         required: true
@@ -132,16 +126,6 @@ paths:
           uri: /build/BuildStep
           headers:
             Content-Type: application/json
-          body: >-
-            {
-
-              "BuildRecordId": "99",
-
-              "StepName": "Compilation",
-
-              "StepResult": "Pass"
-
-            }
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -1041,21 +1025,3 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-definitions:
-  BuildStepRequest:
-    title: BuildStepRequest
-    type: object
-    properties:
-      BuildRecordId:
-        description: ''
-        type: string
-      StepName:
-        description: ''
-        type: string
-      StepResult:
-        description: ''
-        type: string
-    required:
-    - BuildRecordId
-    - StepName
-    - StepResult
