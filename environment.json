@@ -5,13 +5,13 @@
     {
       "enabled": true,
       "key": "myBuildNumber",
-      "value": "158",
+      "value": "160",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "buildNum",
-      "value": "158",
+      "value": "160",
       "type": "text"
     },
     {
@@ -29,25 +29,25 @@
     {
       "enabled": true,
       "key": "myVerDirBuildID",
-      "value": "133",
+      "value": "151",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "verDirNum",
-      "value": "133",
+      "value": "151",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "myCoverityBuildID",
-      "value": "150",
+      "value": "152",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "coverityNum",
-      "value": "150",
+      "value": "152",
       "type": "text"
     },
     {
@@ -125,13 +125,13 @@
     {
       "enabled": true,
       "key": "myQualityGateName",
-      "value": "33",
+      "value": "35",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "qualityGateNum",
-      "value": "33",
+      "value": "35",
       "type": "text"
     },
     {
@@ -243,8 +243,8 @@
       "type": "text"
     }
   ],
-  "timestamp": 1493974388528,
+  "timestamp": 1493974839951,
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2017-05-05T08:53:57.899Z",
+  "_postman_exported_at": "2017-05-05T09:00:44.414Z",
   "_postman_exported_using": "Postman/4.10.7"
 }
