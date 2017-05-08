@@ -199,7 +199,7 @@
 			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"New BuildRecordId\"] =! responseBody.has(\"A BOM record already exists\");\n\nbomNumInc = environment.BOMPostNum++;\npostman.setEnvironmentVariable(\"myBomPostNum\", environment.BOMPostNum );\npostman.setEnvironmentVariable(\"BOMPostNum\", bomNumInc + 1);",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1493982118854,
+			"time": 1494240815532,
 			"name": "Bom (POST)",
 			"description": "Purpose: This function is used to add the initial details of a BOM record to the CMDB. It must be called to create that initial record before any other API calls are made.\r\n\r\nReturns\r\n\r\n•\tHTTP 400 - if syntax error in JSON or JSON missing\r\n\r\n•\tHTTP 400 - if BOM record already exists for the specified\r\nbuild record ID\r\n\r\n•\tHTTP 500 - if a server error occurs\r\n\r\n•\tHTTP 200 - if the record was added successfully\r\n\r\nNotes\r\n\r\n•\tThis can only be called once for any Build Record ID\r\n",
 			"collectionId": "41c72afe-b130-17f2-b351-b521aeacb96f",
